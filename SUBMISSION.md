@@ -1,4 +1,4 @@
-# Transcriptional buffering of essential genes: a confound-masked cross-kingdom law
+# Transcriptional buffering of essential genes: a cross-kingdom extension to primary human T cells
 
 **Built with Claude: Life Sciences — Researcher Track ("Build From the Bench")**
 Dataset: Marson-lab genome-scale CRISPRi Perturb-seq in primary human CD4+ T cells (Gladstone / UCSF)
@@ -24,9 +24,12 @@ deciles (δ = −0.17, p = 8×10⁻⁶), confirmed by a second essential-gene se
 p = 1×10⁻¹⁴) and by continuous selective constraint (shet, p = 3×10⁻²⁰), in all three stimulation
 states.
 
-The yeast buffering law generalises across a billion years of divergence — but only once a confound
-severe enough to reverse the naive answer is removed. Naive cross-species responsiveness comparison
-is actively misleading.
+This buffering direction — and the need to control for expression — was already reported in human
+iPSCs by Feng et al. (2026, controlling for expression level). Our contribution is therefore an
+**extension, not a discovery**: we show the principle holds in primary human CD4+ T cells rather than
+pluripotent lines, that it is **dynamic across T-cell activation** (peaking at 8 h), and that it
+**unifies with the yeast co-differential-expression law** across ~10⁹ years of divergence — plus a
+transcriptional-tractability application and a shipped per-gene buffering-score resource.
 
 ---
 
@@ -101,11 +104,12 @@ prior yeast work (the only reason a cross-kingdom comparison is possible).
 
 The buffering **direction is not first-reported here** — verified against the primary sources:
 
-- **Feng et al. 2026** (*Cell Genomics*; human iPSC genome-scale CRISPRi across many lines): report, as a
-  supplementary observation, that *evolutionary conservation is the most informative predictor of a gene
-  having **fewer** trans-regulators*, framed as essential genes being "robust to perturbation of upstream
-  regulators." **This is our direction, our axis (incoming regulators), in human cells.** We confirm and
-  extend it — we do not discover it.
+- **Feng et al. 2026** (*Cell Genomics*; human iPSC genome-scale CRISPRi across many lines): **"Controlling
+  for differences in expression level… evolutionary conservation was the most informative predictor for
+  having fewer [trans-]regulators"** (Fig S2.1D). This is decisive: Feng **already control for expression**
+  and **already report the buffering direction, on our axis, in human cells.** So neither the direction nor
+  the need to correct for expression is novel here — we **confirm and extend**, we do not discover, and we
+  do **not** claim the expression-confound insight as ours.
 - **Nourreddine et al. 2026** (*Nature Biotechnology*; KOLF2.1J iPSC genome-scale Perturb-seq atlas):
   concurrent human iPSC atlas; builds a co-perturbation cell map + specific regulators (ZBTB41, RNF7, DBR1)
   and overlaps DepMap essentiality, but does **not** relate essentiality to incoming trans-regulator count.
@@ -116,13 +120,20 @@ The buffering **direction is not first-reported here** — verified against the 
   the confound runs the opposite way. **Costanzo 2016**: essential genes are genetic-interaction *hubs* —
   the perturbation-*source* axis, which coexists with readout-buffering.
 
-**We do not claim first evidence** that human constrained genes are buffered — Feng et al. report the
-direction. Our contributions are a **confirmation-and-extension**: (1) the expression-power confound is
-strong enough to *reverse* the marginal essentiality signal (δ +0.26→−0.17) — a vivid cautionary
-demonstration (Feng treat expression as a separate covariate but do not report the marginal sign reversal);
-(2) **primary immune cells across activation states**, with buffering shown to be *dynamic* (peaks at 8 h);
-(3) explicit **cross-kingdom** unification with the yeast law; (4) forward applications (tractability axis,
-buffering-score resource).
+**We do not claim first evidence, nor the expression-confound insight** — Feng et al. controlled for
+expression and reported the direction in human iPSCs. This is an **extension**, and its value is the
+forward programme, not a discovery. What genuinely survives as ours:
+1. **A different, disease-relevant cell system** — primary human CD4+ T cells, not iPSC lines; the
+   principle is not confined to pluripotent cells.
+2. **Activation dynamics** — buffering is *dynamic*, peaking at early activation (8 h); Feng had no
+   stimulation-state axis. Genuinely new and immune-specific.
+3. **Cross-kingdom unification** with the yeast co-differential-expression law — only possible because
+   we hold the yeast comparator.
+4. **Forward applications** — the transcriptional-tractability axis and the shipped per-gene
+   buffering-score resource for the Marson atlas.
+
+The naive→corrected sign-flip is retained only as a *pedagogical illustration* of the same confound
+Feng controlled for — **not** claimed as a novel methodological warning.
 
 ## Impact — what this enables (demonstrated)
 
@@ -138,9 +149,9 @@ two demonstrated in the notebook:
    n=823); intersecting essential + druggable + least-buffered recovers known tractable targets
    (PLK1, AURKB, CHEK1, CDK1, WEE1). Buffered genes resist transcriptional modulation — a principled
    filter for upstream/indirect targeting strategies.
-3. **A reusable methodological correction** — expression-power correction is required for *any* Perturb-seq
-   responsiveness / trans-hubness ranking; the sign-flip proves the stakes. Re-interprets existing
-   trans-maps, standardises future ones. Effect-size-independent — the most transferable contribution.
+3. **A pedagogical illustration of a known correction** — expression-power correction matters for any
+   Perturb-seq responsiveness / trans-hubness ranking (Feng et al. already apply it); our sign-flip makes
+   the stakes vividly explicit as a teaching example. Not claimed as novel.
 
 **Resource shipped:** per-gene buffering score for all 10,282 genes (`buffering_score_resource.csv`).
 
@@ -170,8 +181,10 @@ comparison is exploratory. Both are hypothesis-generating.
   bioRxiv 10.64898/2025.12.23.696273.
 - **Method lineage:** Nasar, Rehman, Ott & Alam (2026) *Uncovering coordinated pathway interactions
   through gene co-differential expression in yeast*, NAR 54(1):gkaf1410.
-- **Closest prior art:** Feng C. et al. (2026) *A genome-scale single-cell CRISPRi map of trans gene
-  regulation across human pluripotent stem cell lines*, **Cell Genomics 3:101076** (bioRxiv 2024.11.28.625833).
+- **Closest prior art (largely pre-empts the direction + expression-control):** Feng C. et al. (2026)
+  *A genome-scale single-cell CRISPRi map of trans gene regulation across human pluripotent stem cell
+  lines*, **Cell Genomics 3:101076** (bioRxiv 2024.11.28.625833). Fig S2.1D, controlling for expression,
+  finds conservation the top predictor of *fewer* trans-regulators.
 - Nourreddine S. et al. (2026) *A genome-scale CRISPRi perturbation atlas of human induced pluripotent stem
   cells*, **Nature Biotechnology**, doi:10.1038/s41587-026-03199-w (concurrent human iPSC Perturb-seq atlas).
 - Mostafavi H. et al. (2023) *Systematic differences in discovery of genetic effects on gene expression
