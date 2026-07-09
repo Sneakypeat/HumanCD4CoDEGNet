@@ -75,6 +75,28 @@ VAV1) jumps from ~2 targets to ~5000, while rest-state hubs (blue; TP53, PTEN, N
 The result is a **distribution-level invariant**, not a fragile causal claim — which is why it survives
 every confound we could pose.
 
+## Generality — external replication (Replogle 2022; different cell type, lab, platform)
+
+We ran the identical degree-based pipeline on **Replogle et al. 2022** genome-scale Perturb-seq
+(Harmonizome DE gene-sets; directed perturbation → DE-gene edges, the same construction as `n_downstream`).
+Figure `fig_arch3_generality.png`; numbers `artifacts/architecture_replogle_results.json`.
+
+- **Static shape generalizes.** In **K562** (genome-scale, ~7,200 perturbations — a non-immune cancer
+  line) the network is hub-dominated with the same broadcast/reception asymmetry: **out-degree Gini 0.86,
+  top 5 % of regulators → 61 % of edges, in-degree Gini 0.47 (asymmetry +0.40)** — qualitatively identical
+  to Marson-T (0.92 / +0.55). Hub-dominance is not T-cell-specific.
+- **Cross-cell-type echo.** Between **K562 and RPE1** (epithelial) on 1,672 matched essential-gene
+  perturbations, the shape is roughly conserved (out-Gini 0.74 vs 0.63) while **hub identity turns over
+  ~80 %** (Spearman 0.60) — a cross-*context* analog of the within-T-cell shape-invariant/identity-labile
+  result.
+- **Honest scope.** Harmonizome's standardized-value threshold ≠ Marson's 10 % FDR, so only the
+  *qualitative* shape and the *within-Replogle* comparison are directly comparable (absolute Gini values
+  are not). The essential-only Replogle subsets exclude the silent-majority tail that drives hub-dominance,
+  so they compress the asymmetry (RPE1-essential even reverses it) — the **genome-scale K562 network is the
+  fair comparator, and it cleanly supports generality.** The *tight dynamic invariance* (Gini constant to
+  three decimals across a matched activation timecourse) remains specific to the Marson data, because no
+  comparator has a matched within-cell state axis.
+
 ## Novelty and positioning (honest)
 
 - **Novel, and ours:** (1) the **first causal test** of the Barton/Pritchard (2026) hub-dominated /
@@ -104,9 +126,10 @@ every confound we could pose.
   (`artifacts/arch_perturbation_outdegree.csv`) and the full architecture result set
   (`artifacts/architecture_results.json`) — a ready substrate for asking which hubs a given disease
   program routes through, per activation state.
-- **Flagship next experiment:** apply the identical, released-field-only pipeline to the Nourreddine 2026
-  and Replogle 2022 atlases — is shape-invariance under identity-lability a general property of causal
-  GRNs, or specific to T-cell activation?
+- **Generality already tested (Replogle 2022, below):** hub-dominance generalizes to K562; the tight
+  dynamic invariance stays T-cell-specific. **Next:** a comparator *with* a matched state axis (e.g. a
+  stimulation timecourse in another primary cell) is what would test whether dynamic shape-invariance is
+  a general law.
 
 ## Reproducibility
 

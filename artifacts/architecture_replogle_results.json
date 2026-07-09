@@ -1,0 +1,42 @@
+{
+  "K562-genome-wide": {
+    "n_pert": 7189,
+    "edges": 355609,
+    "out_gini": 0.861096826381198,
+    "out_top5": 0.6149535023016853,
+    "in_gini": 0.4654383192112974,
+    "out_med": 3.0,
+    "in_med": 28.0,
+    "asym": 0.3956585071699006
+  },
+  "K562-essential": {
+    "n_pert": 2012,
+    "edges": 278325,
+    "out_gini": 0.7357415571245124,
+    "out_top5": 0.36359651486571454,
+    "in_gini": 0.567474360649186,
+    "out_med": 30.0,
+    "in_med": 17.0,
+    "asym": 0.1682671964753264
+  },
+  "RPE1-essential": {
+    "n_pert": 2094,
+    "edges": 186534,
+    "out_gini": 0.6297990603206951,
+    "out_top5": 0.2730923048881169,
+    "in_gini": 0.7948176861471843,
+    "out_med": 44.0,
+    "in_med": 5.0,
+    "asym": -0.16501862582648918
+  },
+  "cross_cell": {
+    "n_matched": 1672,
+    "spearman_rho": 0.603424769738362,
+    "top100_displaced": 80,
+    "top100_shared": 20
+  },
+  "marson_reference": {
+    "out_gini": 0.929,
+    "in_gini": 0.354
+  }
+}

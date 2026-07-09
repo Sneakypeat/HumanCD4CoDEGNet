@@ -74,6 +74,15 @@ human immune cell is quantitatively conserved in shape and almost entirely reass
 across activation. No fragile causal claim — the result is a distribution-level invariant that survives
 every confound we could pose.
 
+## Generality (external replication)
+
+The hub-dominated, broadcast-concentrated architecture is **not T-cell-specific**: the identical pipeline
+on **Replogle 2022** genome-scale Perturb-seq recovers it in **K562** (out-Gini 0.86, asymmetry +0.40 —
+a non-immune line, different lab/platform), and across K562↔RPE1 the shape is roughly conserved while hub
+identity turns over ~80 % (a cross-cell-type echo of the within-T-cell result). The *tight dynamic
+invariance* remains T-cell-specific — no comparator has a matched activation timecourse.
+(`fig_arch3_generality.png`, `generality_replogle.py`.)
+
 ## Reproducibility
 
 Runs in **seconds from two released summary fields** — the per-perturbation `.obs`
