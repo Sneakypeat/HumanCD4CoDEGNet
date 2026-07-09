@@ -1,0 +1,10 @@
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+h5py>=3.10
+fsspec>=2024.2
+aiohttp>=3.9
+requests>=2.31
+matplotlib>=3.8
+python-igraph>=0.11
+jupyterlab>=4.0

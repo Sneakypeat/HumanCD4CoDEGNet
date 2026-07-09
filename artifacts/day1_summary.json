@@ -1,0 +1,15 @@
+{
+  "url": "https://genome-scale-tcell-perturb-seq.s3.amazonaws.com/marson2025_data/GWCD4i.DE_stats.h5ad",
+  "etag": "c9ff52fcc6d6ce8a387a76dc757a5b97-2002",
+  "bytes": 16786240107,
+  "accessed_utc": "2026-07-08T20:55:49Z",
+  "padj_thr": 0.1,
+  "n_kept": 17260,
+  "density": 0.007393704936773712,
+  "nnz": 1312141,
+  "on_target_masked": 17258,
+  "gene_response_median": 110.0,
+  "pert_burden_median": 2.0,
+  "genes_never_DE": 11,
+  "elapsed_s": 1294.7
+}

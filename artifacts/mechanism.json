@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "n_genes": 10282,
+    "decile_definition": "resid_total <= 10th percentile (most negative = most buffered)",
+    "resid_total_p10_threshold": -94.60185702591956,
+    "n_most_buffered_decile": 1029,
+    "n_essential_ess_hart": 124,
+    "n_essential_in_decile": 32
+  },
+  "family_enrichment_fisher": {
+    "ribosomal": {
+      "n_family_total": 0,
+      "n_in_decile": 0,
+      "expected_in_decile": 0.0,
+      "pct_of_family_buffered": null,
+      "odds_ratio": null,
+      "p_value": 1.0,
+      "note": "no genes of this family present in dataset"
+    },
+    "proteasome": {
+      "n_family_total": 33,
+      "n_in_decile": 6,
+      "expected_in_decile": 3.3,
+      "pct_of_family_buffered": 18.2,
+      "odds_ratio": 2.004127294449875,
+      "p_value": 0.13670980470007552,
+      "note": null
+    },
+    "OXPHOS": {
+      "n_family_total": 96,
+      "n_in_decile": 36,
+      "expected_in_decile": 9.61,
+      "pct_of_family_buffered": 37.5,
+      "odds_ratio": 5.5546827794561935,
+      "p_value": 4.941497704492069e-13,
+      "note": null
+    },
+    "aaRS": {
+      "n_family_total": 26,
+      "n_in_decile": 2,
+      "expected_in_decile": 2.6,
+      "pct_of_family_buffered": 7.7,
+      "odds_ratio": 0.7488640051931191,
+      "p_value": 1.0,
+      "note": null
+    },
+    "histone": {
+      "n_family_total": 9,
+      "n_in_decile": 0,
+      "expected_in_decile": 0.9,
+      "pct_of_family_buffered": 0.0,
+      "odds_ratio": 0.0,
+      "p_value": 0.6123619192871318,
+      "note": null
+    },
+    "spliceosome": {
+      "n_family_total": 23,
+      "n_in_decile": 4,
+      "expected_in_decile": 2.3,
+      "pct_of_family_buffered": 17.4,
+      "odds_ratio": 1.8965853658536584,
+      "p_value": 0.281128414573812,
+      "note": null
+    }
+  },
+  "cliffs_delta_matched": {
+    "metric": "nreg_total",
+    "grouping": "ess_hart",
+    "n_baseMean_bins": 10,
+    "full": {
+      "weighted_delta": -0.17419518315135485,
+      "n_essential_used": 124,
+      "n_non_used": 10158,
+      "per_bin": [
+        {
+          "bin": 0,
+          "delta": -0.16536712150747235,
+          "n_ess": 3,
+          "n_non": 1026
+        },
+        {
+          "bin": 1,
+          "delta": -0.5372357723577236,
+          "n_ess": 3,
+          "n_non": 1025
+        },
+        {
+          "bin": 2,
+          "delta": -0.23460410557184752,
+          "n_ess": 5,
+          "n_non": 1023
+        },
+        {
+          "bin": 3,
+          "delta": -0.22998046875,
+          "n_ess": 4,
+          "n_non": 1024
+        },
+        {
+          "bin": 4,
+          "delta": -0.5081539465101109,
+          "n_ess": 6,
+          "n_non": 1022
+        },
+        {
+          "bin": 5,
+          "delta": -0.6937377690802349,
+          "n_ess": 6,
+          "n_non": 1022
+        },
+        {
+          "bin": 6,
+          "delta": -0.5252450980392157,
+          "n_ess": 8,
+          "n_non": 1020
+        },
+        {
+          "bin": 7,
+          "delta": -0.18862051792828682,
+          "n_ess": 24,
+          "n_non": 1004
+        },
+        {
+          "bin": 8,
+          "delta": -0.16624116624116625,
+          "n_ess": 27,
+          "n_non": 1001
+        },
+        {
+          "bin": 9,
+          "delta": 0.07971745711402622,
+          "n_ess": 38,
+          "n_non": 991
+        }
+      ]
+    },
+    "excl_ribosomal_proteasome": {
+      "weighted_delta": -0.1731003744707611,
+      "n_excluded_total": 33,
+      "n_excluded_essential": 10,
+      "n_essential_used": 114,
+      "per_bin": [
+        {
+          "bin": 0,
+          "delta": -0.16470971950424007,
+          "n_ess": 3,
+          "n_non": 1022
+        },
+        {
+          "bin": 1,
+          "delta": -0.5352250489236791,
+          "n_ess": 3,
+          "n_non": 1022
+        },
+        {
+          "bin": 2,
+          "delta": -0.23549019607843136,
+          "n_ess": 5,
+          "n_non": 1020
+        },
+        {
+          "bin": 3,
+          "delta": -0.2247796278158668,
+          "n_ess": 4,
+          "n_non": 1021
+        },
+        {
+          "bin": 4,
+          "delta": -0.5099771017337259,
+          "n_ess": 6,
+          "n_non": 1019
+        },
+        {
+          "bin": 5,
+          "delta": -0.6910609037328095,
+          "n_ess": 6,
+          "n_non": 1018
+        },
+        {
+          "bin": 6,
+          "delta": -0.5231071779744346,
+          "n_ess": 8,
+          "n_non": 1017
+        },
+        {
+          "bin": 7,
+          "delta": -0.19243781094527368,
+          "n_ess": 20,
+          "n_non": 1005
+        },
+        {
+          "bin": 8,
+          "delta": -0.1550949050949051,
+          "n_ess": 24,
+          "n_non": 1001
+        },
+        {
+          "bin": 9,
+          "delta": 0.0972871572871572,
+          "n_ess": 35,
+          "n_non": 990
+        }
+      ]
+    },
+    "delta_change": 0.0010948086805937507,
+    "buffering_survives_exclusion": true,
+    "note": "Dataset contains 0 ribosomal genes (RPL*/RPS*/MRP*), so the exclusion effectively removes only the 33 proteasome (PSM*) genes; 10 of them are essential."
+  },
+  "go_enrichment": {
+    "status": "skipped",
+    "reason": "ModuleNotFoundError: No module named 'gseapy'"
+  }
+}

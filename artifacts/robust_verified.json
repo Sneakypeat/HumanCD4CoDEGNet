@@ -1,0 +1,106 @@
+{
+  "binning": {
+    "Hart": {
+      "5": -0.131,
+      "10": -0.174,
+      "20": -0.174,
+      "50": -0.144
+    },
+    "CEGv2": {
+      "5": -0.17,
+      "10": -0.192,
+      "20": -0.209,
+      "50": -0.206
+    }
+  },
+  "nb_glm": {
+    "Hart": {
+      "coef": -0.1268,
+      "p": 0.16308423758652923,
+      "note": "negative coef = buffered"
+    },
+    "CEGv2": {
+      "coef": -0.1745,
+      "p": 0.0010709414588600198,
+      "note": "negative coef = buffered"
+    }
+  },
+  "permutation": {
+    "observed_delta": -0.1742,
+    "n_perm": 2000,
+    "null_mean": 0.0004,
+    "null_ci95": [
+      -0.102,
+      0.105
+    ],
+    "p_one_sided": 0.0009995002498750624
+  },
+  "most_buffered_decile": {
+    "n": 1029,
+    "resid_threshold": -94.6
+  },
+  "family_enrichment": {
+    "OXPHOS": {
+      "n_in_panel": 96,
+      "OR": 5.55,
+      "p": 4.941497704492069e-13
+    },
+    "proteasome": {
+      "n_in_panel": 33,
+      "OR": 2.0,
+      "p": 0.10607055598546372
+    },
+    "spliceosome": {
+      "n_in_panel": 23,
+      "OR": 1.9,
+      "p": 0.19291717713316905
+    },
+    "aaRS": {
+      "n_in_panel": 26,
+      "OR": 0.75,
+      "p": 0.7495174472657654
+    },
+    "ribosomal": {
+      "n_in_panel": 0,
+      "note": "absent (HVG-excluded)"
+    }
+  },
+  "exclusion": {
+    "none": {
+      "Hart": {
+        "delta": -0.174,
+        "p": 7.772566386477388e-06,
+        "n_excluded": 0
+      },
+      "CEGv2": {
+        "delta": -0.192,
+        "p": 1.3799853478454629e-14,
+        "n_excluded": 0
+      }
+    },
+    "OXPHOS": {
+      "Hart": {
+        "delta": -0.191,
+        "p": 3.010501241092737e-06,
+        "n_excluded": 96
+      },
+      "CEGv2": {
+        "delta": -0.183,
+        "p": 3.017856701947803e-13,
+        "n_excluded": 96
+      }
+    },
+    "OXPHOS+proteasome": {
+      "Hart": {
+        "delta": -0.197,
+        "p": 3.7207766336999083e-06,
+        "n_excluded": 129
+      },
+      "CEGv2": {
+        "delta": -0.18,
+        "p": 1.789792116118475e-12,
+        "n_excluded": 129
+      }
+    }
+  }
+}
