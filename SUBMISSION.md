@@ -106,7 +106,7 @@ The buffering **direction is not first-reported here** — verified against the 
 
 - **Feng et al. 2026** (*Cell Genomics*; human iPSC genome-scale CRISPRi across many lines): **"Controlling
   for differences in expression level… evolutionary conservation was the most informative predictor for
-  having fewer [trans-]regulators"** (Fig S2.1D). This is decisive: Feng **already control for expression**
+  having fewer [trans-]regulators"** (Fig S2D). This is decisive: Feng **already control for expression**
   and **already report the buffering direction, on our axis, in human cells.** So neither the direction nor
   the need to correct for expression is novel here — we **confirm and extend**, we do not discover, and we
   do **not** claim the expression-confound insight as ours.
@@ -183,7 +183,7 @@ comparison is exploratory. Both are hypothesis-generating.
   through gene co-differential expression in yeast*, NAR 54(1):gkaf1410.
 - **Closest prior art (largely pre-empts the direction + expression-control):** Feng C. et al. (2026)
   *A genome-scale single-cell CRISPRi map of trans gene regulation across human pluripotent stem cell
-  lines*, **Cell Genomics 3:101076** (bioRxiv 2024.11.28.625833). Fig S2.1D, controlling for expression,
+  lines*, **Cell Genomics 3:101076** (bioRxiv 2024.11.28.625833). Fig S2D, controlling for expression,
   finds conservation the top predictor of *fewer* trans-regulators.
 - Nourreddine S. et al. (2026) *A genome-scale CRISPRi perturbation atlas of human induced pluripotent stem
   cells*, **Nature Biotechnology**, doi:10.1038/s41587-026-03199-w (concurrent human iPSC Perturb-seq atlas).
