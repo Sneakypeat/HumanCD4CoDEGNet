@@ -1,0 +1,468 @@
+{
+  "description": "Activation-induced trans-broadcast (n_downstream) change per perturbation, Rest -> Stim8hr, ontarget_significant knockdowns only.",
+  "csv_rows_total": 33983,
+  "ontarget_significant_rows": 21216,
+  "per_condition_total_n_downstream": {
+    "Rest": 487437,
+    "Stim48hr": 562931,
+    "Stim8hr": 681090
+  },
+  "per_condition_n_perturbations": {
+    "Rest": 6869,
+    "Stim48hr": 7193,
+    "Stim8hr": 7154
+  },
+  "delta_Stim8hr_minus_Rest_total_broadcast": 193653,
+  "pct_change_Rest_to_Stim8hr": 39.7,
+  "n_genes_in_both_Rest_and_Stim8hr": 6452,
+  "top_30_gainers": [
+    {
+      "gene": "CD3E",
+      "n_downstream_Rest": 3,
+      "n_downstream_Stim8hr": 5710,
+      "delta_broadcast": 5707,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "LAT",
+      "n_downstream_Rest": 3,
+      "n_downstream_Stim8hr": 5535,
+      "delta_broadcast": 5532,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": true
+    },
+    {
+      "gene": "PLCG1",
+      "n_downstream_Rest": 2,
+      "n_downstream_Stim8hr": 5032,
+      "delta_broadcast": 5030,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "LCP2",
+      "n_downstream_Rest": 1,
+      "n_downstream_Stim8hr": 4981,
+      "delta_broadcast": 4980,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": true
+    },
+    {
+      "gene": "CD3D",
+      "n_downstream_Rest": 6,
+      "n_downstream_Stim8hr": 4983,
+      "delta_broadcast": 4977,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "CD3G",
+      "n_downstream_Rest": 4,
+      "n_downstream_Stim8hr": 4965,
+      "delta_broadcast": 4961,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ZAP70",
+      "n_downstream_Rest": 82,
+      "n_downstream_Stim8hr": 5021,
+      "delta_broadcast": 4939,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": true
+    },
+    {
+      "gene": "VAV1",
+      "n_downstream_Rest": 69,
+      "n_downstream_Stim8hr": 4897,
+      "delta_broadcast": 4828,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "CD247",
+      "n_downstream_Rest": 4,
+      "n_downstream_Stim8hr": 4329,
+      "delta_broadcast": 4325,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "BCAT2",
+      "n_downstream_Rest": 8,
+      "n_downstream_Stim8hr": 3677,
+      "delta_broadcast": 3669,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "BCL10",
+      "n_downstream_Rest": 0,
+      "n_downstream_Stim8hr": 3455,
+      "delta_broadcast": 3455,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ITK",
+      "n_downstream_Rest": 1,
+      "n_downstream_Stim8hr": 3392,
+      "delta_broadcast": 3391,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "LRBA",
+      "n_downstream_Rest": 4,
+      "n_downstream_Stim8hr": 2992,
+      "delta_broadcast": 2988,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "PGGT1B",
+      "n_downstream_Rest": 174,
+      "n_downstream_Stim8hr": 3013,
+      "delta_broadcast": 2839,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "FITM2",
+      "n_downstream_Rest": 20,
+      "n_downstream_Stim8hr": 2606,
+      "delta_broadcast": 2586,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "SLC3A2",
+      "n_downstream_Rest": 2,
+      "n_downstream_Stim8hr": 2491,
+      "delta_broadcast": 2489,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "DNTTIP1",
+      "n_downstream_Rest": 236,
+      "n_downstream_Stim8hr": 2724,
+      "delta_broadcast": 2488,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "CARMIL2",
+      "n_downstream_Rest": 85,
+      "n_downstream_Stim8hr": 2544,
+      "delta_broadcast": 2459,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "CALCOCO2",
+      "n_downstream_Rest": 4,
+      "n_downstream_Stim8hr": 2351,
+      "delta_broadcast": 2347,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "TMX1",
+      "n_downstream_Rest": 0,
+      "n_downstream_Stim8hr": 2346,
+      "delta_broadcast": 2346,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "PTPRC",
+      "n_downstream_Rest": 54,
+      "n_downstream_Stim8hr": 2254,
+      "delta_broadcast": 2200,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "DOLPP1",
+      "n_downstream_Rest": 579,
+      "n_downstream_Stim8hr": 2717,
+      "delta_broadcast": 2138,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "MAX",
+      "n_downstream_Rest": 89,
+      "n_downstream_Stim8hr": 2222,
+      "delta_broadcast": 2133,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "LCK",
+      "n_downstream_Rest": 308,
+      "n_downstream_Stim8hr": 2413,
+      "delta_broadcast": 2105,
+      "canonical_pathway": "TCR-signaling",
+      "in_task_example_list": false
+    },
+    {
+      "gene": "MPI",
+      "n_downstream_Rest": 243,
+      "n_downstream_Stim8hr": 2294,
+      "delta_broadcast": 2051,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ATF7IP2",
+      "n_downstream_Rest": 853,
+      "n_downstream_Stim8hr": 2730,
+      "delta_broadcast": 1877,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "MED19",
+      "n_downstream_Rest": 2011,
+      "n_downstream_Stim8hr": 3868,
+      "delta_broadcast": 1857,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "SENP5",
+      "n_downstream_Rest": 3328,
+      "n_downstream_Stim8hr": 5171,
+      "delta_broadcast": 1843,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "BRD8",
+      "n_downstream_Rest": 1902,
+      "n_downstream_Stim8hr": 3692,
+      "delta_broadcast": 1790,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "PKM",
+      "n_downstream_Rest": 56,
+      "n_downstream_Stim8hr": 1840,
+      "delta_broadcast": 1784,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    }
+  ],
+  "top_20_losers": [
+    {
+      "gene": "ZMYM2",
+      "n_downstream_Rest": 2177,
+      "n_downstream_Stim8hr": 304,
+      "delta_broadcast": -1873,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ARF1",
+      "n_downstream_Rest": 1753,
+      "n_downstream_Stim8hr": 57,
+      "delta_broadcast": -1696,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "TP53",
+      "n_downstream_Rest": 1848,
+      "n_downstream_Stim8hr": 190,
+      "delta_broadcast": -1658,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "NFAT5",
+      "n_downstream_Rest": 1623,
+      "n_downstream_Stim8hr": 0,
+      "delta_broadcast": -1623,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "NCKAP1L",
+      "n_downstream_Rest": 2946,
+      "n_downstream_Stim8hr": 1358,
+      "delta_broadcast": -1588,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "FBXL15",
+      "n_downstream_Rest": 1708,
+      "n_downstream_Stim8hr": 125,
+      "delta_broadcast": -1583,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ARHGAP30",
+      "n_downstream_Rest": 1839,
+      "n_downstream_Stim8hr": 298,
+      "delta_broadcast": -1541,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "TSC1",
+      "n_downstream_Rest": 1675,
+      "n_downstream_Stim8hr": 346,
+      "delta_broadcast": -1329,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "PTEN",
+      "n_downstream_Rest": 2928,
+      "n_downstream_Stim8hr": 1638,
+      "delta_broadcast": -1290,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "PPM1D",
+      "n_downstream_Rest": 1389,
+      "n_downstream_Stim8hr": 139,
+      "delta_broadcast": -1250,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "TEP1",
+      "n_downstream_Rest": 1362,
+      "n_downstream_Stim8hr": 191,
+      "delta_broadcast": -1171,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "SP140L",
+      "n_downstream_Rest": 1169,
+      "n_downstream_Stim8hr": 2,
+      "delta_broadcast": -1167,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "SAMD4B",
+      "n_downstream_Rest": 1163,
+      "n_downstream_Stim8hr": 5,
+      "delta_broadcast": -1158,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ST6GALNAC6",
+      "n_downstream_Rest": 1149,
+      "n_downstream_Stim8hr": 15,
+      "delta_broadcast": -1134,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "IMPA2",
+      "n_downstream_Rest": 1144,
+      "n_downstream_Stim8hr": 10,
+      "delta_broadcast": -1134,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "ZBTB9",
+      "n_downstream_Rest": 1116,
+      "n_downstream_Stim8hr": 2,
+      "delta_broadcast": -1114,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "GGA3",
+      "n_downstream_Rest": 1112,
+      "n_downstream_Stim8hr": 0,
+      "delta_broadcast": -1112,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "GEN1",
+      "n_downstream_Rest": 1114,
+      "n_downstream_Stim8hr": 16,
+      "delta_broadcast": -1098,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "SEC14L2",
+      "n_downstream_Rest": 1140,
+      "n_downstream_Stim8hr": 70,
+      "delta_broadcast": -1070,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    },
+    {
+      "gene": "SRF",
+      "n_downstream_Rest": 1043,
+      "n_downstream_Stim8hr": 5,
+      "delta_broadcast": -1038,
+      "canonical_pathway": null,
+      "in_task_example_list": false
+    }
+  ],
+  "top_gainers_canonical_regulators": [
+    {
+      "gene": "CD3E",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "LAT",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "PLCG1",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "LCP2",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "CD3D",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "CD3G",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "ZAP70",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "VAV1",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "CD247",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "ITK",
+      "pathway": "TCR-signaling"
+    },
+    {
+      "gene": "LCK",
+      "pathway": "TCR-signaling"
+    }
+  ]
+}

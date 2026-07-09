@@ -1,0 +1,74 @@
+{
+  "architecture_per_state": {
+    "Rest": {
+      "in_median": 47.0,
+      "in_gini": 0.3957495875606845,
+      "out_gini": 0.921354376300772,
+      "out_top1": 0.36924364868787934,
+      "out_top5": 0.7725393096091656,
+      "n_reg": 11287,
+      "superhubs": 139,
+      "silent": 3588,
+      "total_edges": 592476
+    },
+    "Stim8hr": {
+      "in_median": 66.0,
+      "in_gini": 0.3543736104632793,
+      "out_gini": 0.9287073805159018,
+      "out_top1": 0.3996280143663417,
+      "out_top5": 0.801965110312981,
+      "n_reg": 11415,
+      "superhubs": 195,
+      "silent": 3433,
+      "total_edges": 779600
+    },
+    "Stim48hr": {
+      "in_median": 50.0,
+      "in_gini": 0.4199025640693366,
+      "out_gini": 0.9226346849808169,
+      "out_top1": 0.3515178842061928,
+      "out_top5": 0.7830219550704466,
+      "n_reg": 11281,
+      "superhubs": 185,
+      "silent": 3249,
+      "total_edges": 663127
+    }
+  },
+  "rewiring": {
+    "Rest->Stim8hr": {
+      "rho": 0.701991966248846,
+      "shared": 56,
+      "displaced": 44,
+      "n": 6456
+    },
+    "Rest->Stim48hr": {
+      "rho": 0.6300493634932965,
+      "shared": 41,
+      "displaced": 59,
+      "n": 6432
+    },
+    "Stim8hr->Stim48hr": {
+      "rho": 0.6896472204654281,
+      "shared": 58,
+      "displaced": 42,
+      "n": 6630
+    }
+  },
+  "confound_guards": {
+    "Rest": {
+      "power_rho": -0.1891802134373765,
+      "expr_rho": 0.19226578084058413,
+      "validated_out_gini": 0.9057578090556132
+    },
+    "Stim8hr": {
+      "power_rho": -0.18936297604421734,
+      "expr_rho": 0.22996427437685535,
+      "validated_out_gini": 0.9156207519420191
+    },
+    "Stim48hr": {
+      "power_rho": -0.21798828567863926,
+      "expr_rho": 0.20169857647158332,
+      "validated_out_gini": 0.9098413534532876
+    }
+  }
+}

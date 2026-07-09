@@ -1,0 +1,45 @@
+{
+  "description": "Do activation-added trans-regulatory edges avoid core-essential genes? (Marson2025 GWCD4i DE_stats, padj<0.10 edges, ess_cegv2)",
+  "params": {
+    "padj_threshold": 0.1,
+    "essentiality": "ess_cegv2",
+    "conditions": [
+      "Rest",
+      "Stim8hr"
+    ]
+  },
+  "n_var_measured": 10282,
+  "1_baseline_essential_fraction_genomewide": 0.03666601828438047,
+  "1_n_essential_genes": 377,
+  "n_perturbations_both_conditions": 6456,
+  "2_median_essential_target_fraction_Rest": 0.0,
+  "2_median_essential_target_fraction_Stim8hr": 0.0,
+  "2_paired_wilcoxon_stat": 698023.0,
+  "2_paired_wilcoxon_p": 1.0759346719943085e-12,
+  "2_n_paired_genes_targets_in_both": 4186,
+  "3_n_perturbations_gain_targets": 2788,
+  "3_n_perturbations_lose_targets": 2229,
+  "3_n_perturbations_same_targets": 1439,
+  "3_newly_added_edges_total": 440774,
+  "3_newly_added_edges_essential": 20091,
+  "3_newly_added_essential_fraction": 0.04558118219314206,
+  "3_ratio_vs_baseline": 1.2431451334479753,
+  "3_newly_added_essential_fraction_95ci": [
+    0.044967289272569905,
+    0.04620105747855144
+  ],
+  "3_binomial_p_two_sided": 1.086105261045788e-202,
+  "3_binomial_p_less_avoidance": 1.0,
+  "3_fisher_odds_ratio": 1.254757271034004,
+  "3_fisher_p": 1.136722339622281e-05,
+  "3b_lost_edges_total": 203987,
+  "3b_lost_edges_essential": 13106,
+  "3b_lost_essential_fraction": 0.06424919235049292,
+  "3b_lost_ratio_vs_baseline": 1.7522816863336026,
+  "4_total_edges_Rest_all_perturbations": 488083,
+  "4_total_edges_Stim8hr_all_perturbations": 681371,
+  "4_total_edges_Rest_both_only": 460489,
+  "4_total_edges_Stim8hr_both_only": 641691,
+  "4_network_densifies_on_activation": true,
+  "VERDICT": "NO"
+}

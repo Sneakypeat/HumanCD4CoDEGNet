@@ -1,195 +1,161 @@
-# Transcriptional buffering of essential genes: a cross-kingdom extension to primary human T cells
+# A shape-invariant, identity-labile control architecture in human CD4⁺ T cells
 
 **Built with Claude: Life Sciences — Researcher Track ("Build From the Bench")**
-Dataset: Marson-lab genome-scale CRISPRi Perturb-seq in primary human CD4+ T cells (Gladstone / UCSF)
+Dataset: Marson-lab genome-scale CRISPRi Perturb-seq in primary human CD4⁺ T cells (Gladstone / UCSF /
+Stanford; Zhu, Dann et al. 2025)
 
 ---
 
-## Abstract (198 words)
+## Abstract (~200 words)
 
-In *Saccharomyces cerevisiae*, essential genes are markedly less transcriptionally responsive than
-nonessential genes — the cell buffers its indispensable transcripts against perturbation
-(YeastCoDEGNet, *NAR* 2026). Whether this generalises to a human *primary* cell had not been directly
-tested (the direction is already reported in human iPSCs — Feng et al. 2026, expression-controlled —
-and via eQTL by Mostafavi 2023; see Positioning. This work is an extension, not a discovery).
-
-Marson and colleagues' genome-scale CRISPRi Perturb-seq screen in 22 million primary human CD4+
-T cells now provides one — 33,983 perturbation-conditions across 10,282 measured genes. Using
-Claude Science we scored each gene's responsiveness as the number of perturbations that
-significantly move it. Naively, human essential genes appear *more* responsive (Cliff's δ = +0.26,
-p = 8×10⁻⁷) — the opposite of yeast. But this is an expression–power artifact: essential genes are
-~3× more highly expressed and therefore better powered for detection. Matching genes at equal
-baseline expression inverts the result — essential genes are buffered across 9 of 10 expression
-deciles (δ = −0.17, p = 8×10⁻⁶), confirmed by a second essential-gene set (CEGv2, δ = −0.19,
-p = 1×10⁻¹⁴) and by continuous selective constraint (shet, p = 3×10⁻²⁰), in all three stimulation
-states.
-
-This buffering direction — and the need to control for expression — was already reported in human
-iPSCs by Feng et al. (2026, controlling for expression level). Our contribution is therefore an
-**extension, not a discovery**: we show the principle holds in primary human CD4+ T cells rather than
-pluripotent lines, that it is **dynamic across T-cell activation** (peaking at 8 h), and that it
-**unifies with the yeast co-differential-expression law** across ~10⁹ years of divergence — plus a
-transcriptional-tractability application and a shipped per-gene buffering-score resource.
+A primary human T cell rewires thousands of genes within hours of activation, yet remains a stable,
+functioning cell. What, if anything, is *conserved* about how it is controlled? Genome-scale CRISPRi
+Perturb-seq (22 M cells; Rest / Stim 8 h / Stim 48 h) lets us draw the **causal** trans-regulatory
+network of a human immune cell — every validated knockdown → trans-DE gene is one edge — and redraw it
+in each activation state. We find the network is **hub-dominated and sparse-but-pleiotropic** in every
+state: the top 5 % of regulators drive ~78 % of all trans-effects (out-degree Gini **0.92**), while a
+typical gene is controlled by only ~0.5 % of possible regulators. Regulation is **broadcast-concentrated
+but reception-distributed** (out-degree Gini 0.92 vs in-degree Gini 0.35). This is the **first causal
+confirmation** of the hub-dominated / sparse-but-pleiotropic topology that Barton et al. (*Cell Genomics*
+2026, from the dataset's own co-senior lab) predicted from twin-study heritability with no perturbation
+data — a prediction the atlas paper never tested. The novel principle theory does not predict: the
+architecture is **shape-invariant but identity-labile** — hub-dominance is pinned at Gini ≈ 0.92 across
+all three states even as the network densifies +32 % and up to **59 % of the top-100 hubs are displaced**,
+the TCR signalosome switching on as the activation-state broadcaster. *The cell keeps the shape of its
+control while swapping out who is in control.*
 
 ---
 
 ## Figures
 
-**Figure 1 — The sign flip.**
-(A) Raw responsiveness: essential genes (Hart) are differentially expressed by *more* perturbations
-than non-essential genes (Cliff's δ = +0.26, p = 8×10⁻⁷) — opposite to yeast. (B) Within deciles of
-baseline expression, essential-gene responsiveness (red) falls *below* non-essential (blue) in 9 of
-10 deciles (weighted δ = −0.17, Stouffer p = 8×10⁻⁶). The naive signal was an expression–power
-confound; matched at equal expression, essential genes are buffered.
+**Figure 1 — A hub-dominated, sparse-but-pleiotropic causal architecture** (`fig_arch1_topology.png`).
+(A) Lorenz curves of out-degree in all three states collapse onto one another (Gini ≈ 0.92); the top 5 %
+of regulators account for ~78 % of all trans-edges. (B) Rank–out-degree (Stim 8 h): ~195 super-hubs
+(>1000 targets) sit above a long tail, ~3400 regulators are transcriptionally silent (0 detectable
+targets). (C) Out-degree Gini (broadcast, ~0.92) vastly exceeds in-degree Gini (reception, ~0.35–0.42) in
+every state — control is broadcast-concentrated but reception-distributed.
 
-**Figure 2 — Robustness forest.**
-Effect size in every stratum: two essential-gene definitions (Hart n=124; CEGv2 n=377) × pooled and
-three stimulation states, plus continuous shet constraint. Raw estimates (grey) are positive
-everywhere; every expression-corrected estimate (teal) is negative. The sign flips in all 12 strata.
-Buffering is strongest at Stim8hr (early activation).
-
-**Figure 3 — shet dose-response.**
-Expression-corrected responsiveness declines monotonically across selective-constraint deciles,
-concentrated in the most-constrained genes (Spearman ρ = −0.09, p = 3×10⁻²⁰, n = 10,166).
+**Figure 2 — Shape-invariant, identity-labile rewiring** (`fig_arch2_rewiring.png`).
+(A) The money panel: total trans-edges swing 592k → 780k → 663k (densify +32 % at 8 h, relax by 48 h)
+while out-degree Gini stays pinned at 0.921 / 0.929 / 0.923. Shape-invariant, mass-variable.
+(B) Hub-identity scatter (out-degree Rest vs Stim 8 h; only regulators with a validated knockdown in
+*both* states — the detectability guard): the TCR signalosome (orange; CD3E/D/G, LAT, LCP2, PLCG1, ZAP70,
+VAV1) jumps from ~2 targets to ~5000, while rest-state hubs (blue; TP53, PTEN, NFAT5, ARF1) collapse.
+(C) Up to 59 % of the top-100 hubs are displaced across activation (44 % Rest→8h, 59 % Rest→48h, 42 %
+8h→48h).
 
 ---
 
 ## Methods
 
-- **Responsiveness** = the authors' per-gene `n_regulators` (number of perturbations that
-  significantly move a gene at 10% FDR), summed across conditions and per condition.
-- **Expression control.** Two independent corrections: (i) the authors' own power-residual
-  `expected_n_regulators_residuals` (Poisson `n_regulators ~ log10(baseMean)`, their Supp. Fig 6);
-  (ii) a non-parametric **baseMean-decile-matched** Mann-Whitney / Cliff's δ (no model assumptions),
-  combined across strata by Stouffer's method.
-- **Essentiality axes.** Hart core-essentials (283; from the authors' repo), CEGv2 reference
-  essentials (684; Hart lab), and shet continuous selective constraint (Zeng et al.). NEGv1
-  nonessential-reference genes were dropped — only 12/928 survive HVG selection, itself evidence
-  that the gene universe is expression-biased.
-- **Cross-validation.** An independent from-scratch rebuild of the binary DE matrix (byte-range
-  stream of `adj_p_value`, on-target masking) reproduces `n_regulators` to three decimals.
+- **Edge set.** Each perturbation (CRISPRi knockdown) → significantly trans-DE gene (authors' 10 % FDR)
+  is one directed causal edge. **Out-degree** of a regulator = the authors' `n_downstream`; **in-degree**
+  of a gene = the authors' per-gene `n_regulators`. The two totals match by construction per state
+  (592k / 780k / 663k; a cross-check we print), so in- and out-degree describe the same network.
+- **Hub-dominance** = Gini coefficient and top-k edge share of the out-degree distribution.
+  **Sparsity** = median in-degree ÷ number of testable regulators. **Pleiotropy** = the out-degree
+  distribution itself (targets per regulator).
+- **Rewiring** = (i) *shape*: out-degree Gini per state; (ii) *identity*: Spearman rank-correlation and
+  top-100 displacement of per-regulator out-degree between states.
+- **KD-detectability guard (critical).** All cross-state rewiring is computed **only among regulators
+  whose on-target knockdown was validated (`ontarget_significant`) in both compared states**, so an
+  "emerging" hub reflects genuine state-dependent control — not a gene merely becoming expressed and
+  therefore knock-down-able on activation.
+
+## Robustness — every confound guarded
+
+| Alternative explanation | Test | Result |
+|---|---|---|
+| Sequencing **power** (more cells → more detected edges) | Spearman(out-degree, cells/perturbation) | **−0.19 to −0.22** (negative → hubs have *fewer* cells) |
+| **Edge definition** (failed-KD noise inflates hubs) | Gini on `ontarget_significant`-only edges | 0.906–0.916 vs 0.92 — **identical** |
+| **Regulator expression** (hubness = KD efficiency) | Spearman(out-degree, log₁₀ baseMean) | +0.19 to +0.23 — weak |
+| **Silent regulators** are just failed KDs | fraction validated, cells | 47–51 % validated, *more* cells than active — **genuinely inert** |
+| **Detectability** drives apparent rewiring | rewiring restricted to both-states-validated | 27/30 top gainers survive; TCR signalosome genuine |
+
+The result is a **distribution-level invariant**, not a fragile causal claim — which is why it survives
+every confound we could pose.
+
+## Novelty and positioning (honest)
+
+- **Novel, and ours:** (1) the **first causal test** of the Barton/Pritchard (2026) hub-dominated /
+  sparse-but-pleiotropic prediction — prior evidence was a scale-free simulation calibrated to twin-study
+  heritability, with no perturbation data; (2) the **shape-invariant / identity-labile** principle — a
+  quantitative architectural constant (Gini ≈ 0.92) that holds through massive edge turnover across
+  activation; (3) the **broadcast-vs-reception asymmetry** (out-Gini 0.92 vs in-Gini 0.35) in a causal
+  human GRN.
+- **Not ours (we do not claim it):** the raw `n_regulators` / `n_downstream` fields are the atlas
+  authors' (Zhu, Dann et al. 2025); that individual regulators are context-specific is their headline —
+  but they do not frame the fields as a topology test, do not report the invariance constant, and do not
+  quantify the detectability-guarded turnover. A "conserved core / rewired periphery" was described in
+  activated CD4⁺ T cells by **Mihai et al. 2025** — but *correlationally* (multiome centrality); ours is
+  the *causal* (perturbational) version they explicitly lack. The closest causal-GRN method (LLCB,
+  Weinstock et al. 2024, same senior authors) was demonstrated on 84 genes; we operate at genome scale
+  on released summary fields.
+
+## Impact — what it enables
+
+- A **compact, quantitative law** for how a human immune cell reorganizes control: a conserved
+  hub-dominated topology whose hub identity is almost entirely reassigned across activation. Systems
+  immunology, not a fragile mechanism.
+- **A causal benchmark for network-topology theory.** The atlas + Barton/Pritchard (2026) are from the
+  same senior lab and were never connected; this is the empirical test — and it extends the theory with a
+  cross-state dimension (architectural shape-invariance) the static model does not contain.
+- **Shipped resources:** per-perturbation out-degree table across states
+  (`artifacts/arch_perturbation_outdegree.csv`) and the full architecture result set
+  (`artifacts/architecture_results.json`) — a ready substrate for asking which hubs a given disease
+  program routes through, per activation state.
+- **Flagship next experiment:** apply the identical, released-field-only pipeline to the Nourreddine 2026
+  and Replogle 2022 atlases — is shape-invariance under identity-lability a general property of causal
+  GRNs, or specific to T-cell activation?
 
 ## Reproducibility
 
-- Single public input file (`GWCD4i.DE_stats.h5ad`), read by **byte-range streaming** — never
-  downloaded whole. Gene lists fetched from raw GitHub. No credentials, no local data.
-- `notebooks/HumanCD4CoDEGNet_buffering.ipynb` runs top-to-bottom in **~2 minutes** and regenerates
-  every number and figure here.
-- All effect sizes, p-values, and per-gene tables are written to `artifacts/` with dataset ETag
-  provenance.
+- Runs in **seconds from two released summary fields** of the single public file
+  (`GWCD4i.DE_stats.h5ad`): the per-perturbation `.obs` (`n_downstream`, `ontarget_significant`) and the
+  per-gene `varm/measured_genes_stats_*` (`n_regulators`). The **16.8 GB effect-size layers are never
+  downloaded.** No credentials, no local data.
+- `notebooks/HumanCD4CoDEGNet_architecture.ipynb` (streams live from S3, 0 errors) and
+  `architecture.py` (CLI) both regenerate every number and both figures. Effect-size/edge-definition
+  sensitivity is included (all-edges vs validated-KD-only).
 
-## How Claude Science got us here
+---
 
-Dataset discovery (CZI Virtual Cells Platform) → read the preprint and the authors' analysis repo to
-locate the exact un-taken analysis (their Hart list is loaded but commented out) → byte-range access
-to a 16.8 GB file → reuse of their responsiveness metric and power-correction → the essentiality
-join they did not make → non-parametric matched validation → interpretation against the user's own
-prior yeast work (the only reason a cross-kingdom comparison is possible).
+## Secondary result — essential-gene transcriptional buffering (confirm-and-extend, not a discovery)
 
-## Robustness (independently verified)
-
-- **Independent pipeline.** Rebuilding responsiveness from scratch (streamed `adj_p_value`<0.10,
-  on-target masked) instead of the authors' `n_regulators` reproduces every effect size
-  (Spearman with authors' metric r=0.996; matched Hart δ=−0.172, CEGv2 δ=−0.181).
-- **Binning.** Matched δ stays negative at 5/10/20/50 baseMean bins for both essential sets.
-- **Permutation null.** Shuffling essential labels *within* baseMean deciles (2,000×): observed
-  δ=−0.174 vs null mean 0.000 (95% CI [−0.10, +0.11]), p=0.001.
-- **Continuous model.** NB-GLM `nreg ~ essential + log10(baseMean)`: CEGv2 coef −0.17, p=0.001;
-  Hart coef −0.13, **p=0.16 (n.s. — the 124-gene list is underpowered for a parametric model)**.
-- **Not a housekeeping artifact.** The most-buffered decile is dominated by OXPHOS (OR 5.55,
-  p=5×10⁻¹³; ribosomal genes are HVG-excluded). Buffering **survives excluding OXPHOS+proteasome**
-  and is if anything stronger (Hart δ −0.17→−0.20).
-
-## Prior art and positioning
-
-The buffering **direction is not first-reported here** — verified against the primary sources:
-
-- **Feng et al. 2026** (*Cell Genomics*; human iPSC genome-scale CRISPRi across many lines): **"Controlling
-  for differences in expression level… evolutionary conservation was the most informative predictor for
-  having fewer [trans-]regulators"** (Fig S2D). This is decisive: Feng **already control for expression**
-  and **already report the buffering direction, on our axis, in human cells.** So neither the direction nor
-  the need to correct for expression is novel here — we **confirm and extend**, we do not discover, and we
-  do **not** claim the expression-confound insight as ours.
-- **Nourreddine et al. 2026** (*Nature Biotechnology*; KOLF2.1J iPSC genome-scale Perturb-seq atlas):
-  concurrent human iPSC atlas; builds a co-perturbation cell map + specific regulators (ZBTB41, RNF7, DBR1)
-  and overlaps DepMap essentiality, but does **not** relate essentiality to incoming trans-regulator count.
-  Related platform, not a pre-emption of this analysis.
-- **Mostafavi & Pritchard 2023** (*Nature*): constrained genes are eQTL-depleted — buffering via *natural*
-  variation + selection. (J.K. Pritchard co-authors our dataset.) Ours is selection-unfiltered CRISPRi.
-- **Newman 2006 / Batada & Hurst 2007**: essential genes have low expression *noise* — a stochastic axis;
-  the confound runs the opposite way. **Costanzo 2016**: essential genes are genetic-interaction *hubs* —
-  the perturbation-*source* axis, which coexists with readout-buffering.
-
-**We do not claim first evidence, nor the expression-confound insight** — Feng et al. controlled for
-expression and reported the direction in human iPSCs. This is an **extension**, and its value is the
-forward programme, not a discovery. What genuinely survives as ours:
-1. **A different, disease-relevant cell system** — primary human CD4+ T cells, not iPSC lines; the
-   principle is not confined to pluripotent cells.
-2. **Activation dynamics** — buffering is *dynamic*, peaking at early activation (8 h); Feng had no
-   stimulation-state axis. Genuinely new and immune-specific.
-3. **Cross-kingdom unification** with the yeast co-differential-expression law — only possible because
-   we hold the yeast comparator.
-4. **Forward applications** — the transcriptional-tractability axis and the shipped per-gene
-   buffering-score resource for the Marson atlas.
-
-The naive→corrected sign-flip is retained only as a *pedagogical illustration* of the same confound
-Feng controlled for — **not** claimed as a novel methodological warning.
-
-## Impact — what this enables (demonstrated)
-
-The contribution is less the effect size than the research programme it opens. Three forward results,
-two demonstrated in the notebook:
-
-1. **Buffering is dynamic — it peaks at early T-cell activation (8 h)** (matched δ: Hart −0.04→−0.34→−0.10;
-   CEGv2 −0.11→−0.29→−0.13). The genes with the strongest activation-associated buffering are canonical
-   effectors (IFNG, GZMB, CSF2, LAG3) → hypothesis: the effector programme is transcriptionally
-   *canalised* during early activation. Immunology-relevant, testable, hands a new question to the resource.
-2. **Buffering is a transcriptional-tractability axis** — reconnecting to the track's "find drug targets"
-   prompt. Druggable-genome genes are significantly *less* buffered (median resid +8.0 vs −16.9, p≈10⁻²¹,
-   n=823); intersecting essential + druggable + least-buffered recovers known tractable targets
-   (PLK1, AURKB, CHEK1, CDK1, WEE1). Buffered genes resist transcriptional modulation — a principled
-   filter for upstream/indirect targeting strategies.
-3. **A pedagogical illustration of a known correction** — expression-power correction matters for any
-   Perturb-seq responsiveness / trans-hubness ranking (Feng et al. already apply it); our sign-flip makes
-   the stakes vividly explicit as a teaching example. Not claimed as novel.
-
-**Resource shipped:** per-gene buffering score for all 10,282 genes (`buffering_score_resource.csv`).
-
-**Flagship next experiment:** run the identical test on Replogle 2022 genome-scale Perturb-seq
-(K562/RPE1) — same correction → tests whether buffering is a general principle or cell-type-specific.
-
-*Honest scope:* the essential+druggable list is small (n=23, illustrative); the cross-condition
-comparison is exploratory. Both are hypothesis-generating.
+As a supporting analysis we also confirm that **selectively-constrained / essential genes are
+transcriptionally buffered** (fewer trans-regulators than expected for their expression) in primary human
+CD4⁺ T cells — expression-corrected Cliff's δ ≈ −0.17 (Hart) and −0.19 (CEGv2), Spearman(resid, shet)
+p = 3×10⁻²⁰, unanimous across two essential-gene sets × three states. **This direction, and the need to
+control for expression, were already reported in human iPSCs by Feng et al. 2026 (expression-controlled,
+Fig S2D) and via eQTL by Mostafavi 2023 — so this is an extension, not a discovery**, and we do not build
+the submission on it. (Notebook: `HumanCD4CoDEGNet_buffering.ipynb`; resource:
+`artifacts/buffering_score_resource.csv`.) A mechanism we explored — that activation edges "route around"
+essential genes — **did not survive edge-level testing and is retired**; see `artifacts/MECHANISM_NOTE.md`.
 
 ## Honest limitations
 
-- Effect sizes are modest (matched δ ≈ −0.17 to −0.19) though unanimous across 12 strata, two
-  essential-gene sets, and an independent pipeline; this is a distributional tendency, not a rule.
-- The parametric NB-GLM is n.s. for the 124-gene Hart set (significant for CEGv2); the claim rests on
-  the non-parametric matched test and the permutation null.
-- HVG selection (10,282 genes; no ribosomal genes) depletes nonessential-reference genes and
-  **attenuates** the contrast — the estimate is conservative, not inflated.
-- Stronger buffering at Stim8hr is suggestive (binary lists) but the continuous shet axis is flat
-  across conditions, so condition-dependence is a hypothesis, not a claim.
-- Essentiality is organismal/cell-line (Hart, CEGv2), not CD4+ T-cell fitness specifically.
-- The buffering *direction* **and** the expression-correction are already reported by Feng et al. 2026
-  (human iPSCs, expression-controlled) and Mostafavi 2023 (eQTL). The novel parts are only the
-  primary-immune-cell context, the activation dynamics, and the cross-kingdom link — not a discovery.
+- "Sparse-but-pleiotropic" is confirmed **qualitatively**; Barton/Pritchard's numbers are
+  heritability-weighted trans-regulators, not CRISPRi-DE edges, so we test the *qualitative* shape, not
+  their exact median.
+- In/out-degree conflate direct and indirect (cascade) effects; a genome-scale direct/indirect
+  decomposition (e.g. LLCB) is future work. The invariance and turnover results do not depend on it.
+- Essentiality/constraint sets are organismal, not CD4⁺-T-cell-specific.
+- The field is fast-moving (atlas is a Dec-2025 preprint; the topology and rewiring papers are
+  2025–2026) — a fresh prior-art scan is warranted before any manuscript.
 
 ## Credit and references
 
-- **Data:** Zhu R., Dann E. et al. (2025) *Genome-scale perturb-seq in primary human CD4+ T cells*,
-  bioRxiv 10.64898/2025.12.23.696273.
+- **Data:** Zhu R., Dann E. et al. (2025) *Genome-scale perturb-seq in primary human CD4⁺ T cells maps
+  context-specific regulators of T cell programs and human immune traits*, bioRxiv
+  10.64898/2025.12.23.696273.
+- **Central theory tested:** Barton A. R. et al. / Pritchard group (2026) *Regulatory network topology and
+  the genetic architecture of gene expression*, **Cell Genomics** S2666-979X(26)00081-9 (bioRxiv
+  2025.08.12.669924).
+- **Adjacent (correlational) rewiring:** Mihai et al. (2025) *A conserved transcriptional backbone and
+  rewiring of gene-regulatory networks in activated human CD4⁺ T cells*, bioRxiv 2025.11.25.687998.
+- **Closest causal-GRN method:** Weinstock J. et al. (2024) LLCB, **Cell Genomics** (PMC10516010).
 - **Method lineage:** Nasar, Rehman, Ott & Alam (2026) *Uncovering coordinated pathway interactions
   through gene co-differential expression in yeast*, NAR 54(1):gkaf1410.
-- **Closest prior art (largely pre-empts the direction + expression-control):** Feng C. et al. (2026)
-  *A genome-scale single-cell CRISPRi map of trans gene regulation across human pluripotent stem cell
-  lines*, **Cell Genomics 3:101076** (bioRxiv 2024.11.28.625833). Fig S2D, controlling for expression,
-  finds conservation the top predictor of *fewer* trans-regulators.
-- Nourreddine S. et al. (2026) *A genome-scale CRISPRi perturbation atlas of human induced pluripotent stem
-  cells*, **Nature Biotechnology**, doi:10.1038/s41587-026-03199-w (concurrent human iPSC Perturb-seq atlas).
-- Mostafavi H. et al. (2023) *Systematic differences in discovery of genetic effects on gene expression
-  and complex traits*, Nature. Newman J.R.S. et al. (2006) Nature 441:840. Batada & Hurst (2007) Nat
-  Genet 39:945. Costanzo M. et al. (2016) Science 353:aaf1420.
-- **Reference gene sets:** Hart et al. core essentials & CEGv2/NEGv1; shet selective constraint
-  (gnomAD-based). Full prior-art report: `artifacts/novelty.md`.
+- **Secondary-result prior art:** Feng C. et al. (2026) *Cell Genomics* 3:101076 (expression-controlled
+  buffering direction in human iPSCs); Mostafavi H. et al. (2023) *Nature* (eQTL depletion of constrained
+  genes). Reference gene sets: Hart core-essentials & CEGv2 (Hart lab); shet constraint (gnomAD-based).

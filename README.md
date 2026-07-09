@@ -1,22 +1,31 @@
-# HumanCD4CoDEGNet — transcriptional buffering of essential genes
+# HumanCD4CoDEGNet — a shape-invariant, identity-labile control architecture
 
 **Built with Claude: Life Sciences** (Researcher Track), 7–13 July 2026.
-Finding: the yeast transcriptional-buffering law generalises to primary human CD4+ T cells —
-but is masked, and sign-inverted, by an expression–power confound.
 
-Method lineage: **YeastCoDEGNet** (Nasar, **Rehman**, Ott & Alam, *NAR* 2026, gkaf1410).
-Data: Marson-lab genome-scale CRISPRi Perturb-seq (Zhu, Dann et al. 2025).
+**Finding.** The *causal* trans-regulatory network of primary human CD4⁺ T cells is **hub-dominated and
+sparse-but-pleiotropic** in every activation state — the first causal confirmation of the
+Barton/Pritchard (*Cell Genomics* 2026) topology prediction, which was made from twin-study heritability
+with no perturbation data. The architecture is **shape-invariant but identity-labile**: hub-dominance is
+pinned at **Gini ≈ 0.92** across Rest → 8 h → 48 h even as the network densifies +32 % and up to **59 %
+of the top-100 hubs are displaced**, with the TCR signalosome switching on as the activation-state
+broadcaster. *The cell keeps the shape of its control while swapping out who is in control.*
+
+Data: Marson-lab genome-scale CRISPRi Perturb-seq, ~22 M primary human CD4⁺ T cells (Zhu, Dann et al.
+2025, bioRxiv 10.64898/2025.12.23.696273). Method lineage: **YeastCoDEGNet** (Nasar, **Rehman**, Ott &
+Alam, *NAR* 2026, gkaf1410).
 
 ## Result in one line
 
-| view | essential vs non | reading |
-|---|---|---|
-| raw responsiveness | Cliff's δ = **+0.26**, p=8×10⁻⁷ | essential look MORE responsive (confound) |
-| baseMean-matched | δ = **−0.17**, p=8×10⁻⁶ (9/10 deciles) | essential are BUFFERED |
-| CEGv2 essentials | δ = **−0.19**, p=1×10⁻¹⁴ | second list, same |
-| shet constraint | ρ = **−0.09**, p=3×10⁻²⁰ | continuous, same |
+| view (per activation state) | Rest | Stim 8h | Stim 48h |
+|---|---|---|---|
+| out-degree Gini (hub-dominance) | **0.921** | **0.929** | **0.923** |
+| top 5 % of regulators → share of all trans-edges | 77 % | 80 % | 78 % |
+| median regulators per gene (of ~11.3k possible) | 47 | 66 | 50 |
+| total trans-edges | 592k | 780k | 663k |
+| top-100 hubs displaced vs Rest | — | 44 % | 59 % |
 
-Unanimous across 2 essential-gene sets × pooled + 3 stimulation states (12 strata). Strongest at Stim8hr.
+Shape (Gini) invariant; identity (which genes are hubs) turns over. Every confound guarded
+(power ρ ≈ −0.20; validated-KD-only Gini 0.91; not KD-efficiency).
 
 ## Run it
 
@@ -24,46 +33,55 @@ Unanimous across 2 essential-gene sets × pooled + 3 stimulation states (12 stra
 cd ~/CoDEG_Tcell
 python3.12 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-jupyter lab notebooks/HumanCD4CoDEGNet_buffering.ipynb   # reproduces in ~2 min from one public file
+
+# either:
+jupyter lab notebooks/HumanCD4CoDEGNet_architecture.ipynb   # streams live, 0 errors, figures inline
+# or:
+python architecture.py                                      # CLI: writes results JSON + both figures
 ```
 
-The notebook streams a single public S3 file by byte-range (never downloads the 16.8 GB whole),
-fetches gene lists from raw GitHub, and regenerates every number and figure. No credentials.
+Reproduces in **seconds from two released summary fields** of the single public S3 file
+(`GWCD4i.DE_stats.h5ad`): per-perturbation `.obs` (`n_downstream`, `ontarget_significant`) and per-gene
+`varm/measured_genes_stats_*` (`n_regulators`). **The 16.8 GB effect-size layers are never downloaded.**
+No credentials, no local data.
 
 ## Layout
 
 ```
 notebooks/
-  HumanCD4CoDEGNet_buffering.ipynb   THE submission notebook (executed, figures inline, ~2 min)
-analyze_all.py        per-condition × multi-axis test table  -> artifacts/results_table.csv
-buffering_test.py     the core headline test (Hart + shet)
-robustness_matched.py non-parametric baseMean-matched validation
-figures.py            fig1 sign-flip, fig2 robustness forest, fig3 shet dose-response
-run_day1.py           independent binary-matrix build (cross-checks n_regulators to 3 decimals)
+  HumanCD4CoDEGNet_architecture.ipynb  THE submission notebook (streams, executed, figures inline)
+  HumanCD4CoDEGNet_buffering.ipynb     secondary result (essential-gene buffering; confirm-and-extend)
+architecture.py       CLI: degree distributions, hub-dominance, rewiring, confound guards, figures
+analyze_all.py        secondary: per-condition × essentiality buffering table
 artifacts/
-  figures/*.png                      the three figures
-  results_table.csv                  all 12 strata
-  per_gene_full.csv                  per-gene responsiveness + essentiality + baseMean + shet
-  buffering_test_results.json, robustness_matched.json, day1_summary.json
-SUBMISSION.md         abstract, figure captions, methods, reproducibility, limitations
+  figures/fig_arch1_topology.png       hub-dominated + broadcast/reception asymmetry
+  figures/fig_arch2_rewiring.png       shape-invariant, identity-labile rewiring
+  architecture_results.json            all architecture + rewiring + guard numbers
+  arch_perturbation_outdegree.csv      per-perturbation out-degree across states (shipped resource)
+  MECHANISM_NOTE.md                    a mechanism we tested and RETIRED (refuted) — kept for honesty
+SUMMARY.md            one-page pitch          SUBMISSION.md   full writeup
+VIDEO_TRANSCRIPT_3MIN.md
 ```
 
 ## What we verified (not assumed)
 
-- Dataset shapes/layers/flags read from the file, not the docs.
-- QC filter → **17,260** usable perturbation-conditions (predicted from flags, confirmed).
-- Density **0.74%** matches the authors' own `n_downstream` counts (independent cross-check).
-- My independent responsiveness build agrees with the authors' `n_regulators` to 3 decimals.
-- Read the preprint + analysis repo: the authors compute responsiveness and its power-correction
-  (Supp Fig 6) but **never join it to essentiality** (their Hart list is loaded then commented out).
-  That join — plus the yeast comparator — is the contribution.
+- Dataset shapes / obs fields / varm groups read from the file, not the docs.
+- **Edge-total cross-check:** sum of out-degree == sum of in-degree per state (592k / 780k / 663k) —
+  in- and out-degree describe the same causal network.
+- **KD-detectability guard:** all cross-state rewiring restricted to regulators whose knockdown was
+  validated (`ontarget_significant`) in *both* compared states — so hub emergence is genuine, not "the
+  gene became expressible."
+- Hub-dominance is identical on validated-KD-only edges (Gini 0.91 vs 0.92); out-degree is *negatively*
+  correlated with cells-per-perturbation (not a power artifact).
 
-## Four traps handled
+## Honesty
 
-1. Yeast's FC>2 cutoff does not transfer (median |log2FC|=0.095) → threshold on FDR alone.
-2. `log_fc` is log2, not natural log.
-3. `DE_stats.suppl_table.csv` is a truncated copy of `.obs` missing 4 QC flags → read flags from h5ad.
-4. CRISPRi on-target self-DE masked (82.8% of rows).
+- The raw `n_regulators` / `n_downstream` fields are the atlas authors'; our contribution is the topology
+  framing, the causal test of Barton/Pritchard (2026), the invariance constant, and the guarded turnover.
+  See `SUBMISSION.md` for full positioning vs Zhu/Marson 2025 and Mihai 2025 (correlational).
+- A secondary essential-gene *buffering* result is real but **not a discovery** (Feng et al. 2026 reported
+  the direction, expression-controlled, in iPSCs). A mechanism we explored ("activation routes around
+  essential genes") was **refuted and retired** — see `artifacts/MECHANISM_NOTE.md`.
 
 ## Prior work
 
