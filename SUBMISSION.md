@@ -10,8 +10,8 @@ Dataset: Marson-lab genome-scale CRISPRi Perturb-seq in primary human CD4+ T cel
 In *Saccharomyces cerevisiae*, essential genes are markedly less transcriptionally responsive than
 nonessential genes — the cell buffers its indispensable transcripts against perturbation
 (YeastCoDEGNet, *NAR* 2026). Whether this generalises to a human *primary* cell had not been directly
-tested (related human evidence exists — Feng 2024, Mostafavi 2023 — so the direction is not
-first-reported here; see Positioning).
+tested (the direction is already reported in human iPSCs — Feng et al. 2026, expression-controlled —
+and via eQTL by Mostafavi 2023; see Positioning. This work is an extension, not a discovery).
 
 Marson and colleagues' genome-scale CRISPRi Perturb-seq screen in 22 million primary human CD4+
 T cells now provides one — 33,983 perturbation-conditions across 10,282 measured genes. Using
@@ -172,8 +172,9 @@ comparison is exploratory. Both are hypothesis-generating.
 - Stronger buffering at Stim8hr is suggestive (binary lists) but the continuous shet axis is flat
   across conditions, so condition-dependence is a hypothesis, not a claim.
 - Essentiality is organismal/cell-line (Hart, CEGv2), not CD4+ T-cell fitness specifically.
-- The buffering *direction* is corroborated by prior human work (Feng 2024; Mostafavi 2023); the
-  sign-inversion, cross-kingdom framing, and primary-immune-cell context are the novel parts.
+- The buffering *direction* **and** the expression-correction are already reported by Feng et al. 2026
+  (human iPSCs, expression-controlled) and Mostafavi 2023 (eQTL). The novel parts are only the
+  primary-immune-cell context, the activation dynamics, and the cross-kingdom link — not a discovery.
 
 ## Credit and references
 
