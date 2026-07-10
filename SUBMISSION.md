@@ -1,6 +1,6 @@
 # A shape-invariant, identity-labile control architecture in human CD4⁺ T cells
 
-**Built with Claude: Life Sciences — Researcher Track ("Build From the Bench")**
+**Claude Hackathon: Life Sciences — Researcher Track ("Build From the Bench")**
 Dataset: Marson-lab genome-scale CRISPRi Perturb-seq in primary human CD4⁺ T cells (Gladstone / UCSF /
 Stanford; Zhu, Dann et al. 2025)
 
@@ -105,8 +105,8 @@ Figure `fig_arch3_generality.png`; numbers `artifacts/architecture_replogle_resu
   quantitative architectural constant (Gini ≈ 0.92) that holds through massive edge turnover across
   activation; (3) the **broadcast-vs-reception asymmetry** (out-Gini 0.92 vs in-Gini 0.35) in a causal
   human GRN.
-- **Not ours (we do not claim it):** the raw `n_regulators` / `n_downstream` fields are the atlas
-  authors' (Zhu, Dann et al. 2025); that individual regulators are context-specific is their headline —
+- **Not ours (we do not claim it):** the raw `n_regulators` / `n_downstream` fields were released by the
+  atlas authors (Zhu, Dann et al. 2025); that individual regulators are context-specific is their headline —
   but they do not frame the fields as a topology test, do not report the invariance constant, and do not
   quantify the detectability-guarded turnover. A "conserved core / rewired periphery" was described in
   activated CD4⁺ T cells by **Mihai et al. 2025** — but *correlationally* (multiome centrality); ours is

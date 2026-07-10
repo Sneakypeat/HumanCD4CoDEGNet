@@ -1,6 +1,6 @@
 # Summary — A shape-invariant, identity-labile control architecture in human CD4⁺ T cells
 
-**Built with Claude: Life Sciences (Researcher Track).** Data: Marson-lab genome-scale CRISPRi
+**Claude Hackathon: Life Sciences (Researcher Track).** Data: Marson-lab genome-scale CRISPRi
 Perturb-seq, ~22M primary human CD4⁺ T cells, Rest / Stim 8 h / Stim 48 h (Zhu, Dann et al. 2025,
 bioRxiv 10.64898/2025.12.23.696273).
 

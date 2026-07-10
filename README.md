@@ -1,6 +1,6 @@
 # HumanCD4CoDEGNet — a shape-invariant, identity-labile control architecture
 
-**Built with Claude: Life Sciences** (Researcher Track), 7–13 July 2026.
+**Claude Hackathon: Life Sciences** (Researcher Track), 7–13 July 2026.
 
 **Finding.** The *causal* trans-regulatory network of primary human CD4⁺ T cells is **hub-dominated and
 sparse-but-pleiotropic** in every activation state — the first causal confirmation of the
@@ -79,7 +79,7 @@ VIDEO_TRANSCRIPT_3MIN.md
 
 ## Honesty
 
-- The raw `n_regulators` / `n_downstream` fields are the atlas authors'; our contribution is the topology
+- The raw `n_regulators` / `n_downstream` fields were released by the atlas authors; our contribution is the topology
   framing, the causal test of Barton/Pritchard (2026), the invariance constant, and the guarded turnover.
   See `SUBMISSION.md` for full positioning vs Zhu/Marson 2025 and Mihai 2025 (correlational).
 - A secondary essential-gene *buffering* result is real but **not a discovery** (Feng et al. 2026 reported
