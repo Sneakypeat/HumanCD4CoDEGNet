@@ -93,6 +93,17 @@ partial +0.45) while feedback loops add ~0 (first causal-atlas confirmation of P
 the architecture is a degree phenomenon, not modular; (3) a **middle-manager hierarchy is not supported**
 (throughput is hub-dominated) and is scoped out. Figure `fig_arch4_furthertests.png`.
 
+## Disease lead (turning the architecture into a hypothesis)
+
+Using our novel turnover axis, we asked what the atlas paper did not: do the hubs that switch on
+*specifically* with activation carry more disease risk than the stable hubs? Holding hubness constant,
+**activation-gained hubs are ~2× enriched for monogenic-disease (ClinVar) genes vs stable hubs** (OR 2.3,
+p = 0.01; a trend under a degree+expression-matched null). Common-variant autoimmune-GWAS genes are *not*
+enriched — the signal is specific to *monogenic* immune genes. The gained ∩ druggable ∩ disease shortlist —
+**ZAP70, ITK, LCK, PTPRC, IL12RB2** — nominates druggable, state-specific control points. Preliminary and
+honestly underpowered, but it converts the architecture result into a testable disease hypothesis
+(`fig_arch5_disease.png`, `disease_hubs.py`).
+
 ## Reproducibility
 
 Runs in **seconds from two released summary fields** — the per-perturbation `.obs`

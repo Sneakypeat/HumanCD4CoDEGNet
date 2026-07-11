@@ -98,6 +98,32 @@ Figure `fig_arch3_generality.png`; numbers `artifacts/architecture_replogle_resu
   which makes it a **sharp, falsifiable prediction** for the next matched-timecourse atlas: the natural next
   phase of a full program, not a settled limitation.
 
+## Disease relevance — the state-specific control layer concentrates monogenic-disease risk (a testable lead)
+
+Because our novel axis is the identity *turnover*, we could ask a question the atlas paper did not (it ran
+cluster-level GWAS enrichment on downstream *targets*; this is **regulator hubs stratified by turnover**):
+do the regulators that become hubs *specifically on activation* ("gained" hubs) differ in disease/drug
+relevance from the *stable* hubs? Holding hubness constant — both sets are Stim-8h hubs, both validated in
+Rest and 8h (`disease_hubs.py`, `fig_arch5_disease.png`):
+
+- **Monogenic-disease (ClinVar-pathogenic) genes are ~2× enriched in activation-gained hubs vs stable
+  hubs** (26 % vs 13 %, Fisher OR 2.3, p = 0.01; attenuating to a trend under a degree+expression-matched
+  null, z = +1.5, p = 0.08 — so partly, not wholly, an expression effect).
+- **Common-variant autoimmune-GWAS genes are *not* enriched** (14.9 % vs 11.8 %, n.s.) and the broad GWAS
+  catalogue is flat (OR 0.8) — consistent with the gained hubs being *monogenic* immune genes that
+  common-variant catalogues miss. Reporting these nulls is the point: the signal is **specific to
+  monogenic disease**, not a generic "immune genes are everything" artifact.
+- The activation-gained ∩ druggable ∩ disease genes form a concrete shortlist of **state-specific control
+  points**: **ZAP70, ITK, LCK, PTPRC, IL12RB2** — kinases, a phosphatase and a cytokine receptor that go
+  from near-silent/modest at rest to thousands of downstream targets at 8 h, all established or tractable
+  immunology drug targets.
+
+**Interpretation (hypothesis-generating).** Activation builds a distinct control layer disproportionately
+from druggable, monogenic-immune-disease genes — nominating them as *state-specific* intervention points
+and turning the architecture into a testable disease hypothesis rather than a description. Honestly
+underpowered (114 gained hubs) and a trend under the strictest null; the clean next test is more
+states/donors and an inborn-errors-of-immunity panel.
+
 ## Further tests — the deferred threads, each closed to a definite outcome
 
 Three secondary questions raised by the topology literature, run to a definite result on the
