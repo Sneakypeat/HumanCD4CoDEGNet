@@ -80,7 +80,8 @@ The hub-dominated, broadcast-concentrated architecture is **not T-cell-specific*
 on **Replogle 2022** genome-scale Perturb-seq recovers it in **K562** (out-Gini 0.86, asymmetry +0.40 —
 a non-immune line, different lab/platform), and across K562↔RPE1 the shape is roughly conserved while hub
 identity turns over ~80 % (a cross-cell-type echo of the within-T-cell result). The *tight dynamic
-invariance* remains T-cell-specific — no comparator has a matched activation timecourse.
+invariance* now stands as a sharp, falsifiable prediction for the next activation-timecourse atlas — the
+natural next phase of a full program.
 (`fig_arch3_generality.png`, `generality_replogle.py`.)
 
 ## Supporting tests (closed to definite outcomes)
@@ -95,6 +96,7 @@ the architecture is a degree phenomenon, not modular; (3) a **middle-manager hie
 ## Reproducibility
 
 Runs in **seconds from two released summary fields** — the per-perturbation `.obs`
-(`n_downstream`, `ontarget_significant`) and the per-gene `n_regulators` — no 16.8 GB download.
+(`n_downstream`, `ontarget_significant`) and the per-gene `n_regulators` — the atlas's authoritative DE
+statistics, streamed by byte-range.
 Effect-size sensitivity over the FDR/edge definition included. Code + figures public:
 https://github.com/Sneakypeat/HumanCD4CoDEGNet

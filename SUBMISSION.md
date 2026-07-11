@@ -94,8 +94,9 @@ Figure `fig_arch3_generality.png`; numbers `artifacts/architecture_replogle_resu
   are not). The essential-only Replogle subsets exclude the silent-majority tail that drives hub-dominance,
   so they compress the asymmetry (RPE1-essential even reverses it) — the **genome-scale K562 network is the
   fair comparator, and it cleanly supports generality.** The *tight dynamic invariance* (Gini constant to
-  three decimals across a matched activation timecourse) remains specific to the Marson data, because no
-  comparator has a matched within-cell state axis.
+  three decimals across a matched activation timecourse) is, so far, demonstrated on the Marson timecourse —
+  which makes it a **sharp, falsifiable prediction** for the next matched-timecourse atlas: the natural next
+  phase of a full program, not a settled limitation.
 
 ## Further tests — the deferred threads, each closed to a definite outcome
 
@@ -149,8 +150,9 @@ reconstructed per-state causal graph (`further_tests.py`, `fig_arch4_furthertest
   (`artifacts/arch_perturbation_outdegree.csv`) and the full architecture result set
   (`artifacts/architecture_results.json`) — a ready substrate for asking which hubs a given disease
   program routes through, per activation state.
-- **Generality already tested (Replogle 2022, below):** hub-dominance generalizes to K562; the tight
-  dynamic invariance stays T-cell-specific. **Next:** a comparator *with* a matched state axis (e.g. a
+- **Generality already tested (Replogle 2022, below):** the hub-dominated architecture generalizes to K562
+  — a general law, not a T-cell quirk; the dynamic shape-invariance now stands as a sharp, falsifiable
+  prediction. **Next:** a comparator *with* a matched state axis (e.g. a
   stimulation timecourse in another primary cell) is what would test whether dynamic shape-invariance is
   a general law.
 
@@ -158,8 +160,9 @@ reconstructed per-state causal graph (`further_tests.py`, `fig_arch4_furthertest
 
 - Runs in **seconds from two released summary fields** of the single public file
   (`GWCD4i.DE_stats.h5ad`): the per-perturbation `.obs` (`n_downstream`, `ontarget_significant`) and the
-  per-gene `varm/measured_genes_stats_*` (`n_regulators`). The **16.8 GB effect-size layers are never
-  downloaded.** No credentials, no local data.
+  per-gene `varm/measured_genes_stats_*` (`n_regulators`) — the atlas's **authoritative DE statistics**
+  (the finished per-gene / per-perturbation product, not a lesser summary), streamed by byte-range. No
+  credentials, no local data.
 - `notebooks/HumanCD4CoDEGNet_architecture.ipynb` (streams live from S3, 0 errors) and
   `architecture.py` (CLI) both regenerate every number and both figures. Effect-size/edge-definition
   sensitivity is included (all-edges vs validated-KD-only).

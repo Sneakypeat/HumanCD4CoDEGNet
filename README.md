@@ -42,8 +42,8 @@ python architecture.py                                      # CLI: writes result
 
 Reproduces in **seconds from two released summary fields** of the single public S3 file
 (`GWCD4i.DE_stats.h5ad`): per-perturbation `.obs` (`n_downstream`, `ontarget_significant`) and per-gene
-`varm/measured_genes_stats_*` (`n_regulators`). **The 16.8 GB effect-size layers are never downloaded.**
-No credentials, no local data.
+`varm/measured_genes_stats_*` (`n_regulators`) — the atlas's authoritative DE statistics, streamed by
+byte-range. No credentials, no local data.
 
 ## Layout
 
