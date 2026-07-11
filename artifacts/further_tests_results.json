@@ -1,0 +1,23 @@
+{
+  "T2": {
+    "spearman": 0.6559773823838192,
+    "partial_exprctrl": 0.4473829766239171,
+    "n": 10282,
+    "feedback_raw": 0.08688620006297927,
+    "feedback_partial_on_complexity": 0.032842329852236465,
+    "feedback_partial_p": 0.012493884860038516
+  },
+  "T1": {
+    "transitivity_obs": 0.2088331907044467,
+    "transitivity_null": 0.21245981876393227,
+    "z": -5.491596804034207,
+    "reciprocity": 0.010187498635324355,
+    "n_nodes": 5784,
+    "n_edges": 320589
+  },
+  "T3_exploratory": {
+    "top": 12040.0,
+    "middle": 1800.0,
+    "bottom": 35.0
+  }
+}

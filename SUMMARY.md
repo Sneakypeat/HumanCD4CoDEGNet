@@ -83,6 +83,15 @@ identity turns over ~80 % (a cross-cell-type echo of the within-T-cell result). 
 invariance* remains T-cell-specific — no comparator has a matched activation timecourse.
 (`fig_arch3_generality.png`, `generality_replogle.py`.)
 
+## Supporting tests (closed to definite outcomes)
+
+Reconstructing the per-state causal graph (`further_tests.py`): (1) **plasticity tracks regulatory
+complexity, not motifs** — a gene's cross-state plasticity scales with its in-degree (Spearman +0.66,
+partial +0.45) while feedback loops add ~0 (first causal-atlas confirmation of Petit et al. 2026);
+(2) **no excess locality** — directed 2-hop closure matches a degree-preserving null (0.209 vs 0.212), so
+the architecture is a degree phenomenon, not modular; (3) a **middle-manager hierarchy is not supported**
+(throughput is hub-dominated) and is scoped out. Figure `fig_arch4_furthertests.png`.
+
 ## Reproducibility
 
 Runs in **seconds from two released summary fields** — the per-perturbation `.obs`

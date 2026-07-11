@@ -97,6 +97,29 @@ Figure `fig_arch3_generality.png`; numbers `artifacts/architecture_replogle_resu
   three decimals across a matched activation timecourse) remains specific to the Marson data, because no
   comparator has a matched within-cell state axis.
 
+## Further tests — the deferred threads, each closed to a definite outcome
+
+Three secondary questions raised by the topology literature, run to a definite result on the
+reconstructed per-state causal graph (`further_tests.py`, `fig_arch4_furthertests.png`,
+`artifacts/further_tests_results.json`):
+
+- **Plasticity tracks regulatory complexity — not motifs (CONFIRMED).** A gene's expression plasticity
+  (SD of expression-corrected responsiveness across states) scales with its **regulatory complexity**
+  (in-degree): Spearman **ρ = +0.66** (partial **+0.45** controlling baseline expression, n = 10,282),
+  while **feedback-loop participation adds ~nothing beyond in-degree** (partial ρ = +0.03 — ~20× weaker
+  than complexity's +0.66). First confirmation, in a causal human immune-cell atlas, of the plasticity ↔ complexity-but-not-motifs
+  dissociation predicted by Petit et al. (*Genetics* 2026). Reuses Angle 1's in-degree and reinforces
+  that the *quantity of inputs*, not local wiring, sets plasticity.
+- **Trans-effects are not "local" beyond degree (informative null).** Directed 2-hop closure
+  (transitivity) of the regulator→regulator graph is **0.209 vs 0.212 in a degree-preserving null — a
+  negligible ~1.5 % difference**, reciprocity 0.01. The hub-dominated architecture is a *degree* phenomenon, not a
+  modular/short-path one — this rules out a local-propagation reading and keeps the result anchored on
+  the degree distribution (contra a naive two-hop-locality expectation).
+- **Middle-manager hierarchy — not supported (scoped out).** Throughput (in×out) is dominated by the top
+  tier (median 12,040 / 1,800 / 35 for top / middle / bottom), i.e. hub-dominated rather than a Yu–Gerstein mid-tier bottleneck. A
+  rigorous betweenness test would need to separate direct from indirect (cascade) edges, which this data
+  cannot support (the "~99 % direct" simplification failed verification), so we make **no** hierarchy claim.
+
 ## Novelty and positioning (honest)
 
 - **Novel, and ours:** (1) the **first causal test** of the Barton/Pritchard (2026) hub-dominated /

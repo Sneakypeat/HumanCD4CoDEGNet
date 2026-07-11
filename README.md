@@ -53,13 +53,16 @@ notebooks/
   HumanCD4CoDEGNet_buffering.ipynb     secondary result (essential-gene buffering; confirm-and-extend)
 architecture.py       CLI: degree distributions, hub-dominance, rewiring, confound guards, figures
 generality_replogle.py  external replication: Replogle 2022 K562/RPE1 (hub-dominance generalizes)
+further_tests.py      deferred threads closed: plasticity~complexity(not motifs), locality null, hierarchy scoped out
 analyze_all.py        secondary: per-condition × essentiality buffering table
 artifacts/
   figures/fig_arch1_topology.png       hub-dominated + broadcast/reception asymmetry
   figures/fig_arch2_rewiring.png       shape-invariant, identity-labile rewiring
   figures/fig_arch3_generality.png     Replogle K562/RPE1 external replication
+  figures/fig_arch4_furthertests.png   plasticity~complexity (not motifs) + locality null
   architecture_results.json            all architecture + rewiring + guard numbers
   architecture_replogle_results.json   generality-test numbers (K562/RPE1)
+  further_tests_results.json           plasticity/locality/hierarchy outcomes
   arch_perturbation_outdegree.csv      per-perturbation out-degree across states (shipped resource)
   MECHANISM_NOTE.md                    a mechanism we tested and RETIRED (refuted) — kept for honesty
 SUMMARY.md            one-page pitch          SUBMISSION.md   full writeup
