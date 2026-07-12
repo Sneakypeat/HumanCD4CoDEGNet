@@ -7,7 +7,9 @@ def uri(p):
 f1, f2, f3 = uri("fig_arch1_topology.png"), uri("fig_arch2_rewiring.png"), uri("fig_arch3_generality.png")
 f4 = uri("fig_arch5_disease.png")
 
-HTML = f"""<title>HumanCD4CoDEGNet — control architecture of human CD4+ T cells</title>
+HTML = f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HumanCD4CoDEGNet — control architecture of human CD4+ T cells</title>
 <style>
 :root {{
   --bg:#F5F6F8; --panel:#FFFFFF; --fg:#14181E; --muted:#5A6675; --faint:#8892A0;
@@ -94,7 +96,8 @@ footer.foot a:hover,footer.foot a:focus-visible {{ border-color:var(--blue); out
   @keyframes rise {{ from{{opacity:0;transform:translateY(10px)}} to{{opacity:1;transform:none}} }}
 }}
 </style>
-
+</head>
+<body>
 <div class="wrap"><div class="poster">
 
   <header>
@@ -162,8 +165,10 @@ footer.foot a:hover,footer.foot a:focus-visible {{ border-color:var(--blue); out
   </footer>
 
 </div></div>
+</body>
+</html>
 """
-out = os.path.expanduser("~/CoDEG_Tcell/poster/HumanCD4CoDEGNet_poster.html")
+out = os.path.expanduser("~/CoDEG_Tcell/docs/index.html")
 os.makedirs(os.path.dirname(out), exist_ok=True)
 open(out, "w").write(HTML)
 print("wrote", out, "| bytes:", len(HTML))
