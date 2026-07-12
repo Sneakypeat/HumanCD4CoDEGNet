@@ -1,6 +1,7 @@
 # HumanCD4CoDEGNet — a shape-invariant, identity-labile control architecture
 
 **Claude Hackathon: Life Sciences** (Researcher Track), 7–13 July 2026.
+📄 **Live poster:** https://sneakypeat.github.io/HumanCD4CoDEGNet/
 
 **Finding.** The *causal* trans-regulatory network of primary human CD4⁺ T cells is **hub-dominated and
 sparse-but-pleiotropic** in every activation state — the first causal confirmation of the
