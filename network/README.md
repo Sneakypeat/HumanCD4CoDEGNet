@@ -18,6 +18,5 @@ Marson-lab genome-scale CRISPRi Perturb-seq atlas (~22 M cells; Zhu, Dann et al.
 | `HumanCD4CoDEGNet.graphml` | open in Cytoscape |
 | `nodes.csv` / `edges.csv` | universal edge/node tables |
 | `HumanCD4CoDEGNet_network.png` | preview figure |
-| `upload_ndex.py` | one-command NDEx upload (prompts for your login) |
 
 Rebuild from source: `scripts/build_network.py` (streams `.obs` from the public S3 file).
