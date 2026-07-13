@@ -61,7 +61,7 @@ scripts/
   further_tests.py          plasticity~complexity (not motifs), locality null, hierarchy scoped out
   disease_hubs.py           disease lead: state-specific hubs enriched for monogenic-disease / druggable genes
   analyze_all.py, run_day1.py         build the committed data inputs (per_gene_full.csv, B_masked.npz)
-  build_poster.py, build_presenter.py regenerate the poster (docs/index.html) and the presenter
+  build_poster.py           regenerate the poster (docs/index.html)
 artifacts/
   figures/fig_arch1..5.png             topology · rewiring · generality · further-tests · disease
   architecture_results.json            architecture + rewiring + confound-guard numbers
@@ -72,7 +72,6 @@ artifacts/
   per_gene_full.csv, B_masked.npz      committed data inputs (per-gene stats; on-target-masked edge matrix)
   MECHANISM_NOTE.md                    a mechanism we tested and RETIRED (refuted) — kept for honesty
 docs/index.html           the poster, served as a GitHub Pages site
-video/presenter.html      self-advancing teleprompter for the demo video
 SUMMARY.md                one-page pitch          SUBMISSION.md   full writeup
 ```
 
