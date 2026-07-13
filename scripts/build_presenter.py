@@ -104,6 +104,8 @@ addEventListener('keydown',e=>{const k=e.key.toLowerCase();
 render();
 </script>"""
 html=TEMPLATE.replace("__SLIDES__",json.dumps(SLIDES)).replace("__DUR__",json.dumps(DUR))
-out=os.path.expanduser("~/CoDEG_Tcell/video/presenter.html")
-os.makedirs(os.path.dirname(out),exist_ok=True); open(out,"w").write(html)
-print("wrote",out,"| bytes:",len(html))
+# video/ = working source; docs/teleprompter.html = the GitHub Pages copy that gets served
+for out in ["~/CoDEG_Tcell/video/presenter.html","~/CoDEG_Tcell/docs/teleprompter.html"]:
+    out=os.path.expanduser(out)
+    os.makedirs(os.path.dirname(out),exist_ok=True); open(out,"w").write(html)
+    print("wrote",out,"| bytes:",len(html))
