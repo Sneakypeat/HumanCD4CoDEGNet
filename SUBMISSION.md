@@ -147,7 +147,7 @@ reconstructed per-state causal graph (`further_tests.py`, `fig_arch4_furthertest
   rigorous betweenness test would need to separate direct from indirect (cascade) edges, which this data
   cannot support (the "~99 % direct" simplification failed verification), so we make **no** hierarchy claim.
 
-## Novelty and positioning (honest)
+## Novelty and positioning
 
 - **Novel, and ours:** (1) the **first causal test** of the Barton/Pritchard (2026) hub-dominated /
   sparse-but-pleiotropic prediction — prior evidence was a scale-free simulation calibrated to twin-study
@@ -205,7 +205,7 @@ direction, and the need to control for expression, were already reported in huma
 not built on it. A mechanism we explored — that activation edges "route around" essential genes — **did
 not survive edge-level testing and is retired**; see `artifacts/MECHANISM_NOTE.md`.
 
-## Honest limitations
+## Limitations
 
 - "Sparse-but-pleiotropic" is confirmed **qualitatively**; Barton/Pritchard's numbers are
   heritability-weighted trans-regulators, not CRISPRi-DE edges, so we test the *qualitative* shape, not
