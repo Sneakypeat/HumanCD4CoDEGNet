@@ -6,7 +6,7 @@ Stanford; Zhu, Dann et al. 2025)
 
 ---
 
-## Abstract (~200 words)
+## Abstract
 
 A primary human T cell rewires thousands of genes within hours of activation, yet remains a stable,
 functioning cell. What, if anything, is *conserved* about how it is controlled? Genome-scale CRISPRi
