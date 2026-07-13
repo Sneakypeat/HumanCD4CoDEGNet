@@ -87,7 +87,7 @@ SUMMARY.md                one-page pitch          SUBMISSION.md   full writeup
 - Hub-dominance is identical on validated-KD-only edges (Gini 0.91 vs 0.92); out-degree is *negatively*
   correlated with cells-per-perturbation (not a power artifact).
 
-## Honesty
+## Mechinism 
 
 - The raw `n_regulators` / `n_downstream` fields were released by the atlas authors; our contribution is the topology
   framing, the causal test of Barton/Pritchard (2026), the invariance constant, and the guarded turnover.
