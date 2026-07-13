@@ -113,7 +113,6 @@ DESC=("Causal trans-regulatory hub-core network of primary human CD4+ T cells, r
       "A->B means knockdown of A significantly shifts B. Edges are annotated with the activation state(s) "
       "(Rest / Stim8hr / Stim48hr) in which they are present, capturing the shape-invariant but identity-labile "
       "rewiring (hub-dominance pinned at Gini~0.92 while up to 59% of hubs turn over). "
-      "Method lineage: YeastCoDEGNet (Nasar, Rehman, Ott & Alam, NAR 2026). "
       "Poster: https://sneakypeat.github.io/HumanCD4CoDEGNet/  Code: https://github.com/Sneakypeat/HumanCD4CoDEGNet")
 
 # ---- exports ----
@@ -127,7 +126,7 @@ try:
     from ndex2.cx2 import NetworkXToCX2NetworkFactory
     cx2=NetworkXToCX2NetworkFactory().get_cx2network(G)
     for k,v in {"name":NAME,"description":DESC,"version":"1.0","author":"Syed Sabih ur Rehman",
-                "reference":"Zhu, Dann et al. 2025 bioRxiv 10.64898/2025.12.23.696273; YeastCoDEGNet NAR 2026 gkaf1410",
+                "reference":"Zhu, Dann et al. 2025 bioRxiv 10.64898/2025.12.23.696273",
                 "networkType":"causal trans-regulatory network"}.items():
         cx2.add_network_attribute(k,v)
     cx2.write_as_raw_cx2(f"{OUT}/HumanCD4CoDEGNet.cx2")

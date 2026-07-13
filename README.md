@@ -12,8 +12,7 @@ of the top-100 hubs are displaced**, with the TCR signalosome switching on as th
 broadcaster. *The cell keeps the shape of its control while swapping out who is in control.*
 
 Data: Marson-lab genome-scale CRISPRi Perturb-seq, ~22 M primary human CD4⁺ T cells (Zhu, Dann et al.
-2025, bioRxiv 10.64898/2025.12.23.696273). Method lineage: **YeastCoDEGNet** (Nasar, **Rehman**, Ott &
-Alam, *NAR* 2026, gkaf1410).
+2025, bioRxiv 10.64898/2025.12.23.696273).
 
 ## Result in one line
 
@@ -94,9 +93,3 @@ SUMMARY.md                one-page pitch          SUBMISSION.md   full writeup
 - A secondary essential-gene *buffering* result is real but **not a discovery** (Feng et al. 2026 reported
   the direction, expression-controlled, in iPSCs). A mechanism we explored ("activation routes around
   essential genes") was **refuted and retired** — see `artifacts/MECHANISM_NOTE.md`.
-
-## Relevant work
-
-Nasar MI, Rehman SSU, Ott S, Alam MT. *Uncovering coordinated pathway interactions through gene
-co-differential expression in yeast.* Nucleic Acids Research 54(1), 2026, gkaf1410.
-Yeast network: NDEx `794dd2cc-bcae-11f0-a218-005056ae3c32`.
