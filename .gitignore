@@ -7,5 +7,6 @@ __pycache__/
 # cached third-party downloads (Harmonizome/Replogle) — re-fetched by generality_replogle.py
 data/
 
-# recording working-materials (kept local, not part of the research submission)
+# personal working-materials (kept LOCAL — not for the public repo)
 VIDEO_TRANSCRIPT_3MIN.md
+network/upload_ndex.py
