@@ -14,15 +14,11 @@ Marson-lab genome-scale CRISPRi Perturb-seq atlas (~22 M cells; Zhu, Dann et al.
 ## Files
 | file | use |
 |---|---|
-| `HumanCD4CoDEGNet.cx2` | **upload this to NDEx** (CX2) |
+| `HumanCD4CoDEGNet.cx2` | **upload ready to NDEx** (CX2) |
 | `HumanCD4CoDEGNet.graphml` | open in Cytoscape |
 | `nodes.csv` / `edges.csv` | universal edge/node tables |
 | `HumanCD4CoDEGNet_network.png` | preview figure |
 | `upload_ndex.py` | one-command NDEx upload (prompts for your login) |
-
-## Publish on NDEx
-**Web UI:** sign in at [ndexbio.org](https://www.ndexbio.org) → **Upload** → choose `HumanCD4CoDEGNet.cx2`.
-**Or script:** `pip install ndex2 && python upload_ndex.py` (uploads PRIVATE; flip to PUBLIC when ready).
 
 Rebuild from source: `scripts/build_network.py` (streams `.obs` from the public S3 file; no bulk download),
 render the preview with `scripts/render_network.py`. Method lineage: **YeastCoDEGNet**
