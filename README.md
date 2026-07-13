@@ -96,7 +96,7 @@ SUMMARY.md                one-page pitch          SUBMISSION.md   full writeup
   the direction, expression-controlled, in iPSCs). A mechanism we explored ("activation routes around
   essential genes") was **refuted and retired** — see `artifacts/MECHANISM_NOTE.md`.
 
-## Prior work
+## Relevant work
 
 Nasar MI, Rehman SSU, Ott S, Alam MT. *Uncovering coordinated pathway interactions through gene
 co-differential expression in yeast.* Nucleic Acids Research 54(1), 2026, gkaf1410.
