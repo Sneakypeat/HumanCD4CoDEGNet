@@ -1,15 +1,4 @@
 # Video script — plain-spoken version (< 3 min)
-
-*Short sentences. Every period is a breath. No jargon names to trip on.*
-*Read it from the teleprompter: `video/presenter.html` (advances with → / Space).*
-
-## Say the names like this
-- **HumanCD4CoDEGNet** → say *"Human C-D-4 Co-Deg Net"*
-- **ZAP70** → *"Zap seventy"*  ·  **ITK** → *"I-T-K"*  ·  **LCK** → *"L-C-K"*
-- **Marson lab** → *"MAR-son lab"* (the only lab name — everything else was cut)
-
----
-
 **[0:00 — Intro]**
 
 Hi. I'm Syed Sabih ur Rehman. I'm a PhD student at United Arab Emirates University. My project is called Human CD4 CoDEG Net.
