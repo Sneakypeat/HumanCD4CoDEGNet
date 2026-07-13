@@ -42,7 +42,7 @@ pip install -r requirements.txt
 # either:
 jupyter lab notebooks/HumanCD4CoDEGNet_architecture.ipynb   # streams live, 0 errors, figures inline
 # or:
-python architecture.py                                      # CLI: writes results JSON + both figures
+python scripts/architecture.py                              # CLI: writes results JSON + both figures
 ```
 
 Reproduces in **seconds from two released summary fields** of the single public S3 file
@@ -55,12 +55,13 @@ byte-range. No credentials, no local data.
 ```
 notebooks/
   HumanCD4CoDEGNet_architecture.ipynb  THE submission notebook (streams live, executed, figures inline)
-architecture.py           degree distributions, hub-dominance, rewiring, confound guards, figures
-generality_replogle.py    external replication: Replogle 2022 K562/RPE1 (hub-dominance generalizes)
-further_tests.py          plasticity~complexity (not motifs), locality null, hierarchy scoped out
-disease_hubs.py           disease lead: state-specific hubs enriched for monogenic-disease / druggable genes
-analyze_all.py, run_day1.py       build the committed data inputs (per_gene_full.csv, B_masked.npz) from the atlas
-build_poster.py, build_presenter.py   regenerate the poster (docs/index.html) and the video presenter
+scripts/
+  architecture.py           degree distributions, hub-dominance, rewiring, confound guards, figures
+  generality_replogle.py    external replication: Replogle 2022 K562/RPE1 (hub-dominance generalizes)
+  further_tests.py          plasticity~complexity (not motifs), locality null, hierarchy scoped out
+  disease_hubs.py           disease lead: state-specific hubs enriched for monogenic-disease / druggable genes
+  analyze_all.py, run_day1.py         build the committed data inputs (per_gene_full.csv, B_masked.npz)
+  build_poster.py, build_presenter.py regenerate the poster (docs/index.html) and the presenter
 artifacts/
   figures/fig_arch1..5.png             topology · rewiring · generality · further-tests · disease
   architecture_results.json            architecture + rewiring + confound-guard numbers
