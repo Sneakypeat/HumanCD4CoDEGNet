@@ -197,15 +197,13 @@ reconstructed per-state causal graph (`further_tests.py`, `fig_arch4_furthertest
 
 ## Secondary result — essential-gene transcriptional buffering (confirm-and-extend, not a discovery)
 
-As a supporting analysis we also confirm that **selectively-constrained / essential genes are
-transcriptionally buffered** (fewer trans-regulators than expected for their expression) in primary human
-CD4⁺ T cells — expression-corrected Cliff's δ ≈ −0.17 (Hart) and −0.19 (CEGv2), Spearman(resid, shet)
-p = 3×10⁻²⁰, unanimous across two essential-gene sets × three states. **This direction, and the need to
-control for expression, were already reported in human iPSCs by Feng et al. 2026 (expression-controlled,
-Fig S2D) and via eQTL by Mostafavi 2023 — so this is an extension, not a discovery**, and we do not build
-the submission on it. (Notebook: `HumanCD4CoDEGNet_buffering.ipynb`; resource:
-`artifacts/buffering_score_resource.csv`.) A mechanism we explored — that activation edges "route around"
-essential genes — **did not survive edge-level testing and is retired**; see `artifacts/MECHANISM_NOTE.md`.
+As a supporting check we confirm that **selectively-constrained / essential genes are transcriptionally
+buffered** (fewer trans-regulators than expected for their expression) in primary human CD4⁺ T cells —
+expression-corrected Cliff's δ ≈ −0.17 (Hart) / −0.19 (CEGv2), Spearman(resid, shet) p = 3×10⁻²⁰. **This
+direction, and the need to control for expression, were already reported in human iPSCs by Feng et al.
+2026 and via eQTL by Mostafavi 2023 — so this is an extension, not a discovery**, and the submission is
+not built on it. A mechanism we explored — that activation edges "route around" essential genes — **did
+not survive edge-level testing and is retired**; see `artifacts/MECHANISM_NOTE.md`.
 
 ## Honest limitations
 

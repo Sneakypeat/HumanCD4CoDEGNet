@@ -104,7 +104,6 @@ addEventListener('keydown',e=>{const k=e.key.toLowerCase();
 render();
 </script>"""
 html=TEMPLATE.replace("__SLIDES__",json.dumps(SLIDES)).replace("__DUR__",json.dumps(DUR))
-for out in [os.path.expanduser("~/CoDEG_Tcell/video/presenter.html"),
-            "/private/tmp/claude-501/-Users-syedsabihurrehman-Desktop-Metagenome-Project/8c660892-f51b-4520-a39b-07443b4e6eb2/scratchpad/presenter.html"]:
-    os.makedirs(os.path.dirname(out),exist_ok=True); open(out,"w").write(html)
-print("wrote presenter.html | bytes:",len(html))
+out=os.path.expanduser("~/CoDEG_Tcell/video/presenter.html")
+os.makedirs(os.path.dirname(out),exist_ok=True); open(out,"w").write(html)
+print("wrote",out,"| bytes:",len(html))

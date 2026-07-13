@@ -54,27 +54,25 @@ byte-range. No credentials, no local data.
 
 ```
 notebooks/
-  HumanCD4CoDEGNet_architecture.ipynb  THE submission notebook (streams, executed, figures inline)
-  HumanCD4CoDEGNet_buffering.ipynb     secondary result (essential-gene buffering; confirm-and-extend)
-architecture.py       CLI: degree distributions, hub-dominance, rewiring, confound guards, figures
-generality_replogle.py  external replication: Replogle 2022 K562/RPE1 (hub-dominance generalizes)
-further_tests.py      deferred threads closed: plasticity~complexity(not motifs), locality null, hierarchy scoped out
-disease_hubs.py       disease lead: state-specific hubs enriched for monogenic-disease/druggable genes
-analyze_all.py        secondary: per-condition × essentiality buffering table
+  HumanCD4CoDEGNet_architecture.ipynb  THE submission notebook (streams live, executed, figures inline)
+architecture.py           degree distributions, hub-dominance, rewiring, confound guards, figures
+generality_replogle.py    external replication: Replogle 2022 K562/RPE1 (hub-dominance generalizes)
+further_tests.py          plasticity~complexity (not motifs), locality null, hierarchy scoped out
+disease_hubs.py           disease lead: state-specific hubs enriched for monogenic-disease / druggable genes
+analyze_all.py, run_day1.py       build the committed data inputs (per_gene_full.csv, B_masked.npz) from the atlas
+build_poster.py, build_presenter.py   regenerate the poster (docs/index.html) and the video presenter
 artifacts/
-  figures/fig_arch1_topology.png       hub-dominated + broadcast/reception asymmetry
-  figures/fig_arch2_rewiring.png       shape-invariant, identity-labile rewiring
-  figures/fig_arch3_generality.png     Replogle K562/RPE1 external replication
-  figures/fig_arch4_furthertests.png   plasticity~complexity (not motifs) + locality null
-  figures/fig_arch5_disease.png        disease enrichment of state-specific hubs + candidate targets
-  architecture_results.json            all architecture + rewiring + guard numbers
+  figures/fig_arch1..5.png             topology · rewiring · generality · further-tests · disease
+  architecture_results.json            architecture + rewiring + confound-guard numbers
   architecture_replogle_results.json   generality-test numbers (K562/RPE1)
-  further_tests_results.json           plasticity/locality/hierarchy outcomes
+  further_tests_results.json           plasticity / locality / hierarchy outcomes
   disease_hubs_results.json            disease-enrichment numbers + candidate shortlist
   arch_perturbation_outdegree.csv      per-perturbation out-degree across states (shipped resource)
+  per_gene_full.csv, B_masked.npz      committed data inputs (per-gene stats; on-target-masked edge matrix)
   MECHANISM_NOTE.md                    a mechanism we tested and RETIRED (refuted) — kept for honesty
-SUMMARY.md            one-page pitch          SUBMISSION.md   full writeup
-VIDEO_TRANSCRIPT_3MIN.md
+docs/index.html           the poster, served as a GitHub Pages site
+video/presenter.html      self-advancing teleprompter for the demo video
+SUMMARY.md                one-page pitch          SUBMISSION.md   full writeup
 ```
 
 ## What we verified (not assumed)
